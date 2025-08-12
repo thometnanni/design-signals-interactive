@@ -118,7 +118,7 @@
     <g class="metadata" transform="translate(20, 20)">
       <rect
         width="300"
-        height="120"
+        height="140"
         fill="white"
         stroke="black"
         rx="5"
@@ -139,6 +139,11 @@
         ]?.toLocaleString() || "N/A"}
       </text>
       <text x="10" y="100" font-family="Arial" font-size="12">
+        Trade Balance: {hoveredItem.parameters.tradeBalance[
+          mostRecent
+        ]?.toLocaleString() || "N/A"}
+      </text>
+      <text x="10" y="120" font-family="Arial" font-size="12">
         {xParam}: {hoveredItem.parameters[xParam][
           mostRecent
         ]?.toLocaleString() || "N/A"}
