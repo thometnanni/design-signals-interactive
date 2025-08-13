@@ -3,7 +3,17 @@
   import data from "./data.json";
 
   const parameters = $derived(data.parameterKeys);
+  const verticals = $derived(
+    [
+      null,
+      ...new Set(data.items.map((item) => item["Chemical Vertical"])),
+    ].filter((vertical) => vertical !== "Non-chemical")
+  );
+
+  $effect(() => console.log(verticals));
   let xParam = $state("Norm PCI");
+
+  let groupParam = $state(null);
   let allSections = $state(false);
 </script>
 
@@ -14,12 +24,19 @@
         <option value={param}>{param}</option>
       {/each}
     </select>
+
+    <select bind:value={groupParam}>
+      {#each verticals as param}
+        <option value={param}>{param ?? "No grouping"}</option>
+      {/each}
+    </select>
+
     <label>
       <input type="checkbox" bind:checked={allSections} />
       All sections
     </label>
   </nav>
-  <Scatter {data} {xParam} {allSections} />
+  <Scatter {data} {xParam} {groupParam} {allSections} />
 </main>
 
 <style>
