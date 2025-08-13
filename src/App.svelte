@@ -9,12 +9,15 @@
       ...new Set(data.items.map((item) => item["Chemical Vertical"])),
     ].filter((vertical) => vertical !== "Non-chemical")
   );
+  const scales = ["linear", "pow", "symlog"];
 
   $effect(() => console.log(verticals));
   let xParam = $state("Norm PCI");
 
   let groupParam = $state(null);
   let allSections = $state(false);
+  let scaleType = $state("symlog");
+  let scaleParam = $state(500000000);
 </script>
 
 <main>
@@ -35,8 +38,26 @@
       <input type="checkbox" bind:checked={allSections} />
       All sections
     </label>
+
+    <select bind:value={scaleType}>
+      {#each scales as type}
+        <option value={type}>{type}</option>
+      {/each}
+    </select>
+
+    <label>
+      <input type="number" bind:value={scaleParam} />
+      scale parameter
+    </label>
   </nav>
-  <Scatter {data} {xParam} {groupParam} {allSections} />
+  <Scatter
+    {data}
+    {xParam}
+    {groupParam}
+    {allSections}
+    {scaleType}
+    {scaleParam}
+  />
 </main>
 
 <style>

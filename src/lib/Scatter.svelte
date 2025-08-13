@@ -1,7 +1,8 @@
 <script>
   import SmallMultiple from "./SmallMultiple.svelte";
   import { scaleLinear } from "d3-scale";
-  let { data, xParam, allSections, groupParam } = $props();
+  let { data, xParam, allSections, groupParam, scaleType, scaleParam } =
+    $props();
 
   let chartWidth = $state(0);
   let chartHeight = $state(0);
@@ -107,6 +108,8 @@
               onHover={handleItemHover}
               onMouseOut={handleItemMouseOut}
               {groupParam}
+              {scaleType}
+              {scaleParam}
             ></SmallMultiple>
           </g>
         {/if}

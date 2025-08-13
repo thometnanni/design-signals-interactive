@@ -1,5 +1,5 @@
 <script>
-  import { scaleLinear } from "d3-scale";
+  import { scaleSymlog, scaleLinear, scalePow } from "d3-scale";
   let {
     values,
     years,
@@ -10,13 +10,28 @@
     onHover,
     onMouseOut,
     groupParam,
+    scaleType,
+    scaleParam,
   } = $props();
 
-  let yScale = $derived(
-    scaleLinear()
-      .domain(yDomain)
-      .range([-height / 2, height / 2])
-  );
+  let yScale = $derived.by(() => {
+    switch (scaleType) {
+      case "symlog":
+        return scaleSymlog()
+          .domain(yDomain)
+          .range([-height / 2, height / 2])
+          .constant(scaleParam);
+      case "linear":
+        return scaleLinear()
+          .domain(yDomain)
+          .range([-height / 2, height / 2]);
+      case "pow":
+        return scalePow()
+          .domain(yDomain)
+          .range([-height / 2, height / 2])
+          .exponent(scaleParam);
+    }
+  });
 
   let xScale = $derived(
     scaleLinear()
