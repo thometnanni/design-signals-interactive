@@ -16,6 +16,7 @@
     "xlsx": "^0.18.5"
   },
   "dependencies": {
-    "d3-scale": "^4.0.2"
+    "d3-scale": "^4.0.2",
+    "marked": "^16.2.0"
   }
 }

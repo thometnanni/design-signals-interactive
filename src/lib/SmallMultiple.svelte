@@ -12,6 +12,7 @@
     groupParam,
     scaleType,
     scaleParam,
+    filter,
   } = $props();
 
   let yScale = $derived.by(() => {
@@ -50,6 +51,11 @@
     groupParam && groupParam === item["Chemical Vertical"] ? "group" : ""
   );
 
+  let faded = $derived.by(() => {
+    console.log(filter?.key, filter?.values?.includes(item[filter?.key]));
+    return filter?.key != null && !filter?.values?.includes(item[filter?.key]);
+  });
+
   function handleMouseEnter() {
     onHover?.(item);
   }
@@ -59,7 +65,7 @@
   }
 </script>
 
-<g class="{section} {product} {group}">
+<g class={[section, product, group, { faded }]}>
   <path class="visual" d={path}></path>
   <path
     class="interaction"
@@ -82,28 +88,34 @@
       }
     }
 
+    &.faded {
+      path {
+        opacity: 0.2;
+      }
+    }
+
     path {
-      opacity: 0.1;
+      /* opacity: 0.1; */
       fill: none;
       stroke-width: 1;
-      stroke: black;
+      stroke: var(--color-line-chart);
     }
 
     path.interaction {
-      stroke: rgb(0, 132, 75);
-      stroke-width: 2;
+      stroke: rgb(0, 255, 145);
+      stroke-width: 6;
       opacity: 0;
       pointer-events: stroke;
 
       &:hover {
-        opacity: 1;
+        /* opacity: 1; */
       }
     }
   }
 
   .chemicals {
     path {
-      opacity: 1;
+      /* opacity: 1; */
     }
   }
 </style>

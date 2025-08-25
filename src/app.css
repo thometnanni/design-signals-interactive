@@ -11,4 +11,12 @@
   body {
     margin: 0;
   }
+
+  --primary: rgb(16, 1, 75);
+  --secondary: rgb(195, 60, 11);
+
+  --color-line-chart: var(--primary);
+
+  --color-axis: var(--secondary);
+  --color-axis-labels: var(--color-axis);
 }

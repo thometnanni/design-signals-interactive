@@ -1,7 +1,7 @@
 <script>
   import SmallMultiple from "./SmallMultiple.svelte";
   import { scaleLinear } from "d3-scale";
-  let { data, xParam, allSections, groupParam, scaleType, scaleParam } =
+  let { data, xParam, allSections, groupParam, scaleType, scaleParam, filter } =
     $props();
 
   let chartWidth = $state(0);
@@ -21,9 +21,14 @@
 
   let mostRecent = $derived(data.years.length - 1);
 
+  let axisHeight = $derived(chartHeight - paddingTop - paddingBottom);
+
   let innerChartHeight = $derived(
     chartHeight - paddingTop - paddingBottom - smallMultipleHeight
   );
+
+  let axisWidth = $derived(chartWidth - paddingLeft - paddingRight);
+
   let innerChartWidth = $derived(
     chartWidth - paddingLeft - paddingRight - smallMultipleWidth
   );
@@ -77,6 +82,34 @@
   $effect(() => {
     console.log(xScale(xDomain[1]), xDomain[1].toLocaleString(), xDomain[1]);
   });
+
+  const yTicks = $derived(
+    "-"
+      .repeat(33)
+      .split("")
+      .map((_, i, { length }) => {
+        const center = i === (length - 1) / 2;
+        const outside = i === 0 || i === length - 1;
+        const level = i % 16 === 0 ? 1 : i % 4 === 0 ? 2 : 3;
+
+        const y = (axisHeight / (length - 1)) * i;
+        return { center, y, outside, level };
+      })
+  );
+
+  const xTicks = $derived(
+    "-"
+      .repeat(33)
+      .split("")
+      .map((_, i, { length }) => {
+        const center = i === (length - 1) / 2;
+        const outside = i === 0 || i === length - 1;
+        const level = i % 16 === 0 ? 1 : i % 4 === 0 ? 2 : 3;
+
+        const x = (axisWidth / (length - 1)) * i;
+        return { center, x, outside, level };
+      })
+  );
 </script>
 
 <svg
@@ -108,6 +141,7 @@
               onHover={handleItemHover}
               onMouseOut={handleItemMouseOut}
               {groupParam}
+              {filter}
               {scaleType}
               {scaleParam}
             ></SmallMultiple>
@@ -116,7 +150,85 @@
       {/each}
     </g>
   </g>
+  <g class="axes" transform="translate({paddingLeft}, {paddingTop})">
+    <g class="y-ticks">
+      {#each yTicks as { center, outside, y, level }}
+        <g transform="translate(0, {y})">
+          <line
+            x2={axisWidth}
+            class={[`level-${level}`, { center, outside }]}
+          />
+        </g>
+      {/each}
+    </g>
+    <g class="x-ticks">
+      {#each xTicks as { center, outside, x, level }}
+        <g transform="translate({x}, 0)">
+          <line
+            y2={axisHeight}
+            class={[`level-${level}`, { center, outside }]}
+          />
+        </g>
+      {/each}
+    </g>
+    <g class="labels">
+      {#each [0, 1] as index}
+        <g
+          transform="translate(0, {(axisHeight + paddingTop) * index -
+            paddingTop / 2})"
+        >
+          <text x={axisWidth / 2} text-anchor="middle">
+            product complexity
+          </text>
+          <text transform="translate({axisWidth * 0.125}, 0)"> low </text>
+          <text transform="translate({axisWidth * 0.875}, 0)"> high </text>
+          <text transform="translate({axisWidth * 0.75}, 0)"> → </text>
+          <text transform="translate({axisWidth * 0.25}, 0)"> ← </text>
+          <text transform="translate({axisWidth * 0.625}, 0)"> → </text>
+          <text transform="translate({axisWidth * 0.375}, 0)"> ← </text>
+          {#if !index}
+            <text transform="translate({axisWidth + paddingLeft / 2}, 0)">
+              +
+            </text>
+          {:else}
+            <text transform="translate({-paddingLeft / 2}, 0)"> –</text>
+          {/if}
+        </g>
+      {/each}
 
+      {#each [0, 1] as index}
+        <g
+          transform="translate({(axisWidth + paddingLeft) * index -
+            paddingLeft / 2}, 0)"
+        >
+          <text
+            text-anchor="middle"
+            transform="translate(0, {axisHeight / 2}) rotate(-90)"
+          >
+            trade balance
+          </text>
+          <text transform="translate(0, {axisHeight * 0.125}) rotate(-90)">
+            largely exported
+          </text>
+          <text transform="translate(0, {axisHeight * 0.875}) rotate(-90)">
+            largely imported
+          </text>
+          <text transform="translate(0, {axisHeight * 0.75}) rotate(-90)">
+            ←
+          </text>
+          <text transform="translate(0, {axisHeight * 0.25}) rotate(-90)">
+            →
+          </text>
+          <text transform="translate(0, {axisHeight * 0.625}) rotate(-90)">
+            ←
+          </text>
+          <text transform="translate(0, {axisHeight * 0.375}) rotate(-90)">
+            →
+          </text>
+        </g>
+      {/each}
+    </g>
+  </g>
   <!-- Metadata display -->
   {#if hoveredItem}
     <g class="metadata" transform="translate(20, 20)">
@@ -159,5 +271,30 @@
 <style>
   svg {
     cursor: crosshair;
+
+    .axes {
+      line {
+        stroke: var(--color-axis);
+        opacity: 0.2;
+      }
+
+      .level-1 {
+        opacity: 1;
+      }
+
+      .level-2 {
+        opacity: 0.5;
+      }
+
+      .outside {
+        opacity: 0;
+      }
+
+      .labels {
+        dominant-baseline: central;
+        fill: var(--color-axis-labels);
+        text-anchor: middle;
+      }
+    }
   }
 </style>
