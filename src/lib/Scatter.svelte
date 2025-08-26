@@ -1,22 +1,16 @@
 <script>
   import { zoom, zoomIdentity } from "d3-zoom";
   import { select } from "d3-selection";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount, tick } from "svelte";
   import SmallMultiple from "./SmallMultiple.svelte";
   import { scaleLinear } from "d3-scale";
-  import {
-    easeCubicIn,
-    easeCubicInOut,
-    easeCubicOut,
-    easeQuadInOut,
-  } from "d3-ease";
+  import { easeQuadInOut } from "d3-ease";
   let { data, xParam, allSections, groupParam, scaleType, scaleParam, filter } =
     $props();
 
   let container;
   let chartWidth = $state(0);
   let chartHeight = $state(0);
-  let svgEl;
   let hoveredItem = $state(null);
 
   let selection;
@@ -88,14 +82,6 @@
     scaleLinear().domain(xDomain).range([0, innerChartWidth])
   );
 
-  $effect(() => {
-    console.log("Data loaded:", data);
-  });
-
-  $effect(() => {
-    console.log(xScale(xDomain[1]), xDomain[1].toLocaleString(), xDomain[1]);
-  });
-
   const yTicks = $derived(
     "-"
       .repeat(33)
@@ -126,7 +112,8 @@
 
   let transform = $state();
 
-  onMount(() => {
+  onMount(async () => {
+    await tick();
     selection = select(container);
 
     zoomBehavior = zoom()
@@ -136,10 +123,10 @@
       });
 
     selection.call(zoomBehavior);
+  });
 
-    return () => {
-      selection.on(".zoom", null);
-    };
+  onDestroy(() => {
+    selection.on(".zoom", null);
   });
 
   const items = $derived(
