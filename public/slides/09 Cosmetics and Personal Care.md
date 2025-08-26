@@ -1,14 +1,38 @@
 ---
 {
   "_title": "Cosmetics and Personal Care",
-  "products":
-    [
-      { "code": "3302", "label": "bottom", "years": true, "ticks": {} },
-      { "code": "3303", "label": "bottom", "years": true, "ticks": {} },
-      { "code": "3401", "label": "bottom", "years": true, "ticks": {} },
-      { "code": "3402", "label": "bottom", "years": true, "ticks": {} },
-      { "code": "3405", "label": "bottom", "years": true, "ticks": {} },
-    ],
+  "products": [
+    {
+      "code": "3302",
+      "label": "bottom",
+      "years": true,
+      "ticks": {}
+    },
+    {
+      "code": "3303",
+      "label": "bottom",
+      "years": true,
+      "ticks": {}
+    },
+    {
+      "code": "3401",
+      "label": "bottom",
+      "years": true,
+      "ticks": {}
+    },
+    {
+      "code": "3402",
+      "label": "bottom",
+      "years": true,
+      "ticks": {}
+    },
+    {
+      "code": "3405",
+      "label": "bottom",
+      "years": true,
+      "ticks": {}
+    }
+  ]
 }
 ---
 
