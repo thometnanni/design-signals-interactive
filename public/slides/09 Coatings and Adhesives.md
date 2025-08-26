@@ -38,8 +38,8 @@
 
 # Chemicals used in the _Coatings and Adhesives_ sector
 
-Officia non officia sint sit ut in. Veniam duis reprehenderit occaecat. Ex sint esse aliquip amet minim deserunt proident enim. Ipsum eiusmod minim est officia qui aliquip cillum.
+Coatings and Adhesives form a medium-complexity vertical with moderate and stable exports, but Romania does not surpass the competitiveness threshold. The sector plays a limited manufacturing or finishing role, with low domestic value capture.
 
-Consequat quis elit eiusmod reprehenderit Lorem qui. Elit non aliqua sunt magna. Officia ad ex ullamco pariatur magna culpa. Minim sint officia mollit magna nulla ex tempor.
+Romania maintained steady export growth of adhesives, varnishes, resins, and specialty inks from ~30 million USD in the 1980s to a peak of ~657 million USD in 2015–2019. Exports declined slightly to 328 million USD in 2020–2024, while imports remained consistently above 1 billion USD.
 
-Cillum eiusmod dolor deserunt anim consectetur. Nisi consequat anim proident nulla enim elit sunt consequat minim pariatur. Excepteur laboris ad veniam. Sint veniam pariatur et id irure.
+Norm PCI remained high throughout (around 67–71), but Norm RCA stayed between 3.9–5.3, below the competitiveness threshold. Although these values indicate some degree of specialization, they do not reflect sustained comparative advantage.

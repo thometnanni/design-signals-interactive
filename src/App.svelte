@@ -5,10 +5,6 @@
   import slides from "./slides.json";
   import Markdown from "./lib/Markdown.svelte";
 
-  // const slides = await Promise.all(
-  //   slideFiles.map((file) => fetch(file).then((d) => d.text()))
-  // );
-
   const slideDuration = 10;
 
   const parameters = $derived(data.parameterKeys);
@@ -20,9 +16,7 @@
   );
   const scales = ["linear", "pow", "symlog"];
 
-  $effect(() => console.log(verticals));
   let xParam = $state("Norm PCI");
-
   let groupParam = $state(null);
   let allSections = $state(false);
   let scaleType = $state("symlog");
@@ -66,14 +60,13 @@
           values: config.products.map(({ code }) => code),
         };
 
-        return { filter, md, products: config.products };
+        return { filter, md, products: config.products, config };
       })
     )
   );
 
   onMount(() => {
     animationFrame = requestAnimationFrame(loop);
-
     return () => cancelAnimationFrame(animationFrame);
   });
 
@@ -86,9 +79,10 @@
 
 <main>
   <nav>
-    <button onclick={togglePlay} aria-label="play pause loop"
-      >{plays ? "pause" : "play"}</button
-    >
+    <button onclick={togglePlay} aria-label="play pause loop">
+      {plays ? "pause" : "play"}
+    </button>
+
     <select bind:value={xParam}>
       {#each parameters as param}
         <option value={param}>{param}</option>
@@ -126,6 +120,7 @@
     {scaleParam}
     filter={slide?.filter}
     products={slide?.products}
+    config={slide?.config}
   />
   <Markdown md={slide?.md} />
 </main>

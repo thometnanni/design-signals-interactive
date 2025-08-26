@@ -38,8 +38,8 @@
 
 # Chemicals used in the _Commodity Thermoplastics_ sector
 
-Elit amet nostrud culpa ipsum enim adipisicing labore consectetur. Deserunt nostrud quis dolore commodo eiusmod ad sint nostrud aliqua.
+Commodity Thermoplastics was once a strategic vertical with export advantage during socialist industrialization. Since 2000, it has lost competitiveness and been absorbed into global supply chains as a processing or distribution hub, with decreasing specialization.
 
-Id esse adipisicing tempor veniam consectetur ipsum enim amet ad tempor. Elit in est tempor velit tempor voluptate laboris. Eu dolore amet commodo labore cupidatat veniam occaecat.
+Exports of base thermoplastics (polyethylene, polypropylene, vinyls) increased from ~57 million USD (1965–1969) to over 1.7 billion USD (2010–2014). After that, exports declined sharply to ~745 million USD in 2020–2024, while imports grew to over 3.3 billion USD in the same period.
 
-Sit quis sunt ipsum excepteur tempor. Eu ipsum anim et occaecat cupidatat labore duis duis labore. Est irure eu nisi fugiat adipisicing et commodo veniam ipsum ad cupidatat.
+Norm PCI dropped from ~74 to 62, confirming that this vertical comprises standard global commodities. Norm RCA fell from above 10 (1965–1990s), a period of export competitiveness, to values well below 10 after 2000, reaching only 3.1 by 2020–2024.

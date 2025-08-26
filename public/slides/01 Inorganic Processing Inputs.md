@@ -56,8 +56,8 @@
 
 # Chemicals used in the _Inorganic Processing Inputs_ sector
 
-Ipsum qui magna magna duis adipisicing pariatur dolore amet. Culpa ut exercitation magna nostrud culpa laborum qui cillum consectetur aute nisi.
+Romania had a long-standing export specialization in *inorganic inputs*, exceeding the RCA competitiveness threshold until the *late 2000s*. The sharp decline in both export value and RCA after 2010 indicates disintegration from regional processing chains and marginalization of basic input exports. The vertical has shifted from competitive exporter to a residual contributor to the trade structure.
 
-Officia consectetur ut proident culpa adipisicing. Labore sint quis adipisicing non anim culpa nostrud ad voluptate fugiat non. Id veniam pariatur est laboris veniam in veniam ex.
+<!-- Exports of inorganic processing inputs, oxides, carbonates, acids, and similar, grew from ~46 million USD in 1960–64 to peaks of over 1 billion USD in 2005–2009, before declining to ~220 million USD in 2020–24. Imports followed a more stable upward trend, exceeding 1.3 billion USD annually in the 2010s. Export share remained low (peaking around 0.00013) and the average PCI hovered around 50–55, reflecting moderate product complexity. Romania recorded a high Norm RCA in early periods (above 16), but this fell to ~2.1 by 2020–2024. -->
 
-Minim consequat ea labore occaecat ad aute voluptate ad. Exercitation laborum eiusmod proident ullamco minim minim do. Velit Lorem reprehenderit dolore sunt eiusmod laboris esse non non in laborum. Qui esse in aliqua.
+This vertical includes bulk inputs used in metallurgy, glass, ceramics, and other transformation industries. Its export potential was high during socialist industrialization and remained relevant in the early 2000s through connections to regional production chains. However, both PCI and RCA trends show erosion of structural competitiveness and gradual replacement of exports with imports in the most recent period.

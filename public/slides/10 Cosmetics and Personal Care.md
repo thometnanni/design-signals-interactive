@@ -38,8 +38,8 @@
 
 # Chemicals used in the _Cosmetics and Personal Care_ sector
 
-Dolor consectetur sunt labore officia cillum sint consectetur tempor. Officia nostrud id dolor exercitation. Deserunt dolor reprehenderit esse. Culpa cupidatat Lorem exercitation minim.
+Romania developed a moderate export specialization in cosmetics and cleaning products during the 2005–2019 period, reflected in mid-level complexity and consistent RCA above 5. The post-2020 contraction suggests either domestic restructuring or reduced foreign production embedded in Romania. Despite this, the vertical remains structurally import-dependent and below global competitiveness thresholds.
 
-Elit mollit culpa consectetur culpa officia laborum esse ipsum qui laborum. Velit magna magna deserunt mollit quis est veniam nulla. Eu qui commodo velit nostrud eu esse eiusmod nulla excepteur excepteur. Pariatur deserunt enim velit.
+<!-- Romania's exports in cosmetics and personal care rose significantly from negligible levels in the early decades to a peak of over 2.6 billion USD in 2015–2019, followed by a sharp decline to 1.2 billion USD in 2020–2024. Imports consistently outpaced exports, with annual real import values exceeding 5 billion USD post-2010. Export share remained modest (~0.01%), and the PCI hovered around 48–54, indicating moderately complex products. Norm RCA ranged from 5.6 to 7.0 in the recent three decades. -->
 
-Qui Lorem enim eu do reprehenderit culpa exercitation culpa do. Cillum amet fugiat pariatur nisi amet qui. Aliqua irure mollit quis tempor esse nisi. Esse eiusmod dolore do sit deserunt amet.
+These values reflect strong demand and a sustained period of partial specialization between 2005 and 2019, driven by soaps, cleaning products, and low- to mid-range perfumery. However, the 2020–2024 period shows both a sharp contraction in export value and a flattening of RCA, indicating weakening integration into global trade for this vertical. Imports remain structurally high, indicating consumption-led exposure to global supply chains.

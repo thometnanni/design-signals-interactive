@@ -17,6 +17,9 @@
     config,
   } = $props();
 
+  let showYears = $derived(config?.annotations?.years ?? true);
+  let showProductLabel = $derived(config?.annotations?.label ?? true);
+
   let yScale = $derived.by(() => {
     switch (scaleType) {
       case "symlog":
@@ -69,7 +72,7 @@
   let lastYearY = $derived(yScale(values[years.length - 1]));
 
   let labelY = $derived(
-    config.label === "top"
+    (config?.label ?? "top") === "top"
       ? yScale(Math.max(...values)) - 20 / zoom
       : yScale(Math.min(...values)) + 20 / zoom
   );
@@ -77,31 +80,34 @@
 
 <g class={[section, product, group, { faded }]}>
   <g>
-    <text
-      transform="translate({-width / 2 - 5 / zoom}, {firstYearY}) scale({1 /
-        zoom})"
-      class="first year">’{`${years[0]}`.replace(/^[0-9]{2}/, "")}</text
-    >
-    <text
-      transform="translate({width / 2 + 5 / zoom}, {lastYearY}) scale({1 /
-        zoom})"
-      class="last year"
-      >’{`${years[years.length - 1]}`.replace(/^[0-9]{2}/, "")}</text
-    >
-    <!-- <text
-      transform="translate({-width / 2}, {labelY}) scale({1 / zoom})"
-      class={["label", config.label]}>{product}</text
-    > -->
-    <g
-      transform="translate({-width / 2}, {config.label === 'bottom'
-        ? 10
-        : -100}) scale({1 / zoom})"
-    >
-      <foreignObject width={width * zoom} height="50">
-        <div class={["label", config.label]}>{product}</div>
-      </foreignObject>
-    </g>
+    {#if showYears}
+      <text
+        transform="translate({-width / 2 - 5 / zoom}, {firstYearY}) scale({1 /
+          zoom})"
+        class="first year">’{`${years[0]}`.replace(/^[0-9]{2}/, "")}</text
+      >
+      <text
+        transform="translate({width / 2 + 5 / zoom}, {lastYearY}) scale({1 /
+          zoom})"
+        class="last year"
+        >’{`${years[years.length - 1]}`.replace(/^[0-9]{2}/, "")}</text
+      >
+    {/if}
+
+    {#if showProductLabel}
+      <g
+        transform="translate({-width / 2}, {(config?.label ?? 'top') ===
+        'bottom'
+          ? 10
+          : -100}) scale({1 / zoom})"
+      >
+        <foreignObject width={width * zoom} height="50">
+          <div class={["label", config?.label ?? "top"]}>{product}</div>
+        </foreignObject>
+      </g>
+    {/if}
   </g>
+
   <path class="visual" d={path}></path>
   <path
     class="interaction"
@@ -130,6 +136,7 @@
     &.faded {
       path {
         opacity: 0.2;
+        stroke: rgb(182, 182, 182);
         transition: opacity 0.75s;
       }
 
@@ -141,11 +148,9 @@
     }
 
     path {
-      /* opacity: 0.1; */
       fill: none;
-      stroke-width: 1;
+      stroke-width: 1.5;
       stroke: var(--color-line-chart);
-
       transition: opacity 0.75s 0.75s;
     }
 
@@ -154,10 +159,6 @@
       stroke-width: 6;
       opacity: 0;
       pointer-events: stroke;
-
-      &:hover {
-        /* opacity: 1; */
-      }
     }
 
     text {
@@ -203,7 +204,6 @@
         dominant-baseline: text-bottom;
         &.top {
           transform: translateY(-100%);
-          /* dominant-baseline: text-top; */
         }
       }
     }

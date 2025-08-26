@@ -32,8 +32,8 @@
 
 # Chemicals used in the _Pharmaceuticals_ sector
 
-Enim nisi ex quis cupidatat commodo nisi do adipisicing. Ipsum duis exercitation anim non minim minim officia minim excepteur adipisicing ipsum. Eiusmod tempor minim esse duis veniam officia voluptate sit est.
+Romania is not competitively specialized in pharmaceuticals. Despite rising complexity and temporary export surges, the sector operates under FDI-led or foreign-controlled production without a strong RCA base. Structural dependence is confirmed by persistent import surpluses and weak RCA.
 
-Laboris mollit pariatur pariatur minim cupidatat mollit magna reprehenderit dolore reprehenderit. Pariatur laboris ad est. Nisi ea dolore do esse sit Lorem mollit aliqua sint. Ut eiusmod laboris dolor ea mollit commodo.
+Nonetheless, Romania developed a significant pharmaceutical manufacturing sector in the post-socialist period, including packaging, generics, and contract production. However, the RCA values and trade balance show the country remains a dependent consumer in global pharma chains. High PCI reflects the complexity of goods traded but not domestic innovation or specialization.
 
-Magna deserunt dolore id. Qui ea in anim non nulla in nostrud nostrud. Reprehenderit cupidatat sint id cupidatat id minim fugiat elit cupidatat. Consequat id sint reprehenderit cupidatat quis consectetur enim aliquip mollit.
+Pharmaceutical exports grew exponentially, from ~0.7 million USD in 1960–64 to a peak of 5.2 billion USD in 2010–14, before contracting to ~1.9 billion USD in 2020–24. Imports outpaced exports by a wide margin, especially after 2000, reaching 13.5 billion USD in the 2010s. PCI values rose from ~57 to 71.8, reflecting consistent product sophistication. Norm RCA remained well below 10, never exceeding ~3.8.

@@ -43,17 +43,35 @@
 
 <style>
   .info {
-    padding: 1vh 5vh;
+    padding: 1vw;
     border-left: 1px solid var(--secondary);
     color: var(--primary);
-    font-size: 24px;
-    height: 98vh;
+    font-size: 2vw;
+    line-height: 1.2;
+    height: calc(100vh - 2vw);
     overflow: hidden;
+    background: var(--background);
+    /* display: flex;
+    align-content: flex-end;
+    flex-direction: column-reverse; */
+
+    :global(p) {
+      margin: 0 0 1ch 0;
+      font-weight: 500;
+    }
 
     :global(h1) {
-      font-size: 3em;
+      font-size: 1.1vw;
+      line-height: 1;
       color: var(--primary);
+      margin: 0 0 2ch 0;
+      font-weight: 400;
     }
+/* 
+    :global(strong) {
+      font-style: normal;
+      color: var(--secondary);
+    } */
 
     :global(em) {
       font-style: normal;

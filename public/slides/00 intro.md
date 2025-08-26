@@ -1,6 +1,14 @@
 ---
+{
+  "products": [],
+  "label": "bottom",
+  "annotations": {
+    "years": false,
+    "label": false
+  }
+}
 ---
 
-# Intro
+# Introduction
 
-here's some description
+introduction text

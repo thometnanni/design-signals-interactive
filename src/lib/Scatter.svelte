@@ -14,6 +14,7 @@
     scaleParam,
     filter,
     products,
+    config,
   } = $props();
 
   let container;
@@ -31,8 +32,6 @@
 
   const smallMultipleWidth = 150;
   const smallMultipleHeight = 300;
-
-  // const xParam = "PCI";
 
   let mostRecent = $derived(data.years.length - 1);
 
@@ -65,13 +64,13 @@
   });
   const yScale = $derived.by(() => {
     const [max, min] = yDomain;
-    const maxAsinh = Math.asinh(max / 3000000); // Adjust divisor for scaling
+    const maxAsinh = Math.asinh(max / 3000000);
     const minAsinh = Math.asinh(min / 3000000);
 
     return (value) => {
       const asinhValue = Math.asinh(value / 3000000);
       const normalized = (asinhValue - minAsinh) / (maxAsinh - minAsinh);
-      return innerChartHeight * (1 - normalized); // Flip for SVG
+      return innerChartHeight * (1 - normalized);
     };
   });
 
@@ -141,20 +140,36 @@
     data.items.map((item) => {
       const x = xScale(item.parameters[xParam][mostRecent]);
       const y = yScale(item.parameters.tradeBalanceDiff[mostRecent]);
-
-      return {
-        x,
-        y,
-        ...item,
-      };
+      return { x, y, ...item };
     })
   );
 
-  const extent = $derived.by(() => {
-    if (filter.key == null) return [0, 0, axisWidth, axisHeight];
+  function findProductConfig(code) {
+    return products?.find?.((p) => p.code === code) ?? {};
+  }
+  function mergeConfigs(slideCfg, productCfg) {
+    return {
+      ...(slideCfg ?? {}),
+      ...(productCfg ?? {}),
+      label: productCfg?.label ?? slideCfg?.label ?? "top",
+      annotations: {
+        years:
+          productCfg?.annotations?.years ??
+          slideCfg?.annotations?.years ??
+          true,
+        label:
+          productCfg?.annotations?.label ??
+          slideCfg?.annotations?.label ??
+          true,
+      },
+    };
+  }
 
-    const active = items.filter((item) =>
-      filter?.values?.includes(item[filter?.key])
+  const extent = $derived.by(() => {
+    if (!filter || filter.key == null) return [0, 0, axisWidth, axisHeight];
+
+    const active = items.filter((it) =>
+      filter?.values?.includes(it[filter?.key])
     );
 
     const minX = Math.max(
@@ -200,7 +215,6 @@
     // clamp to zoomBehavior scaleExtent
     const [minK, maxK] = zoomBehavior.scaleExtent();
     k = Math.max(minK, Math.min(maxK, k));
-
     // extent is positioned inside the axes group which is translated by paddingLeft/paddingTop
     const targetCenterX = paddingLeft + minX + extW / 2;
     const targetCenterY = paddingTop + minY + extH / 2;
@@ -209,10 +223,10 @@
     let tx = chartWidth / 2 - k * targetCenterX;
     let ty = chartHeight / 2 - k * targetCenterY;
 
-    const x0 = 0;
-    const y0 = 0;
-    const x1 = chartWidth;
-    const y1 = chartHeight;
+    const x0 = 0,
+      y0 = 0,
+      x1 = chartWidth,
+      y1 = chartHeight;
     const minTx = chartWidth - k * x1;
     const maxTx = -k * x0;
     const minTy = chartHeight - k * y1;
@@ -286,7 +300,7 @@
                 {scaleType}
                 {scaleParam}
                 zoom={transform?.k ?? 1}
-                config={products?.find((p) => p.code === item["HS92-4"]) ?? {}}
+                config={mergeConfigs(config, findProductConfig(item["HS92-4"]))}
               ></SmallMultiple>
             </g>
           {/if}
@@ -445,7 +459,7 @@
       </g>
     </g>
   </g>
-  <!-- Metadata display -->
+
   {#if hoveredItem}
     <g class="metadata" transform="translate(20, 20)">
       <rect
@@ -455,7 +469,7 @@
         stroke="black"
         rx="5"
         opacity="0.9"
-      ></rect>
+      />
       <text x="10" y="20" font-family="Arial" font-size="14" font-weight="bold">
         {hoveredItem["HS92-4 Short Label"]}
       </text>
@@ -505,9 +519,12 @@
       .level-1 {
         opacity: 1;
       }
-
       .level-2 {
-        opacity: 0.4;
+        opacity: 0.3;
+      }
+      
+      .level-3 {
+        opacity: 0.1;
       }
 
       .outside {

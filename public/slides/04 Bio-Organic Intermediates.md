@@ -86,8 +86,8 @@
 
 # Chemicals used in the _Bio-Organic Intermediates_ sector
 
-Adipisicing sunt non sit ex. Lorem nisi qui excepteur velit sunt. Laboris voluptate pariatur quis exercitation in ullamco.
+Bio-Organic Intermediates have evolved into a high-complexity but non-specialized, import-dominated vertical, with limited integration into Romania’s productive core.
 
-Tempor sint deserunt incididunt in id elit ipsum ipsum ullamco culpa. Culpa laboris voluptate dolor aute veniam consequat. Minim officia laborum occaecat incididunt aute ad. Anim sit duis esse cillum officia eu et qui esse duis ex.
+Export values for this vertical grew steadily from ~35 million USD (1965–1969) to a peak of 928 million USD (2015–2019). Although they fell to 495 million USD in 2020–2024, the vertical maintained very high complexity (PCI ~62–63). However, RCA declined from 4.9 (1970–1974) to below 1 after 2010, indicating a loss of trade specialization despite increasing product sophistication.
 
-Labore dolore proident et aliqua velit excepteur incididunt enim id ad. Aliqua aliqua amet deserunt ipsum culpa. Nostrud qui Lorem quis laboris eu nisi exercitation cillum. Sunt mollit eu dolore proident et do.
+Since 2000, imports have grown rapidly, exceeding 3.8 billion USD (2020–2024). This indicates that Romania is integrated into global bio-organic value chains mainly as a consumer or processor of intermediates, with limited domestic anchoring or retention of value.

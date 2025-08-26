@@ -14,8 +14,8 @@
 
 # Chemicals used in the _Nuclear and Radioactive Materials_ sector
 
-Id aliqua laborum ad aute sunt culpa. Eiusmod pariatur ad occaecat anim aliquip minim laborum et magna. Ipsum anim ea laboris non non minim consectetur sit aliqua consequat sunt. Anim consequat aliqua voluptate tempor dolore aute voluptate deserunt ad mollit ex.
+*The nuclear vertical* is a strategically regulated and marginal component of Romania’s chemical economy. RCA levels confirm no competitive export position, and production is not structurally integrated into broader trade dynamics. Its significance lies in state-controlled or strategic functions, not in trade competitiveness.
 
-Duis aliquip exercitation fugiat. Laborum laboris sint exercitation sunt ad et consectetur do fugiat. Occaecat est ut mollit. Laboris eu Lorem excepteur laboris proident irure veniam magna ullamco exercitation nostrud.
+This vertical is extremely small in value terms, with exports only briefly exceeding 40 million USD in 2020–24, and imports typically in the range of 5–70 million USD. PCI is moderate to high (52–62), and RCA has remained well below competitiveness thresholds for most periods.
 
-Velit velit incididunt officia elit cupidatat. Lorem ea nostrud tempor non amet ex nostrud Lorem aliquip.
+Products include uranium compounds and radioactive materials used for energy or research. Romania’s presence is almost entirely import-based, with only a limited spike in exports after 2020. There is no sustained competitive advantage, and production is not embedded in wider chemical or industrial chains.

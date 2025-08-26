@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -8,17 +8,74 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  body {
-    margin: 0;
-  }
-
-  --background: white;
-  --primary: rgb(16, 1, 75);
-  --secondary: rgb(195, 60, 11);
+--background: #e9e9e9;
+  --primary: rgb(26, 7, 101);
+  --secondary: #b26549;
 
   --color-line-chart: var(--primary);
   --color-chart-label: var(--primary);
 
   --color-axis: var(--secondary);
   --color-axis-labels: var(--color-axis);
+  
+  body {
+    margin: 0;
+    background: var(--background);
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterTight-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
 }

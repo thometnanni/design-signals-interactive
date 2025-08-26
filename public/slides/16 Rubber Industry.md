@@ -44,8 +44,8 @@
 
 # Chemicals used in the _Rubber Industry_ sector
 
-Minim nisi labore voluptate ut. Labore nisi non sunt deserunt minim mollit.
+Rubber-related exports increased exponentially, from below $300,000 in the early 1960s to over $3 billion in 2015–2019, before moderating to $1.2 billion in 2020–2024. PCI levels for rubber remain consistently below the global median (~47), indicating low complexity, but Romania’s normalized RCA rose sharply from the mid-1990s onward, peaking at nearly 19 in the most recent period, among the highest across chemical verticals.
 
-Ea excepteur minim mollit cillum velit aliquip laboris esse. Laborum reprehenderit quis pariatur. Esse elit mollit mollit nisi est dolore Lorem.
+The sector’s strength is rooted in the mass production of tires, belts, gaskets, and molded parts, largely for automotive OEMs and Tier 1 suppliers across the EU. These goods are manufactured through cost-externalized systems, often in suburban industrial zones relying on commuter labor flows and lower wage arbitration within the EU production architecture.
 
-Aute eu eiusmod non nostrud minim reprehenderit commodo cillum consectetur. Consectetur aliqua ullamco eu aliquip nisi. Proident minim ipsum elit tempor esse minim ad eu nulla. Officia velit exercitation ex eu sit incididunt sint.
+Rubber exports exemplify residual industrial competitiveness within Romania’s advanced-peripheral economy: high-volume, low-complexity goods that anchor territorial employment while remaining tightly subordinated to exogenous innovation and demand cycles. The sector delivers consistent trade surpluses and regional embeddedness, but without strategic autonomy in design, materials science, or product architecture.

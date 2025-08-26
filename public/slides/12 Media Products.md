@@ -26,8 +26,8 @@
 
 # Chemicals used in the _Media Products_ sector
 
-Voluptate qui consequat id amet dolore. Irure qui mollit ea laboris aliqua.
+This vertical is structurally obsolete in Romania’s chemical economy. High PCI and low RCA indicate import-dependence for specialized inputs, with no transition to competitive production. Its persistence reflects residual demand from legacy industrial uses, not industrial competitiveness.
 
-Cillum esse adipisicing velit ut consequat adipisicing anim consectetur. Mollit elit dolor mollit id aute velit commodo. Duis voluptate et ullamco occaecat nisi aliquip sunt aute elit eiusmod.
+<!-- Media-related chemical exports, such as photographic films and chemicals, remained consistently marginal, never exceeding 45 million USD, with exports contracting to ~10 million USD in 2020–24. Imports ranged between 10–260 million USD across periods. PCI values grew from 54 to ~79, showing increased product complexity. Norm RCA remained well below competitiveness levels, never exceeding 3, and dropped to ~0.7 in the 2010s. -->
 
-Esse proident anim aliqua officia. Sint aliqua eu nulla id. Eiusmod aliquip excepteur tempor anim amet minim aute duis est nulla.
+These products are highly sensitive to technological obsolescence, with digitalization making many of them structurally obsolete. Romania maintained a limited presence, largely through imports, with no phase of export-led development. The RCA never approached thresholds indicative of global positioning.
