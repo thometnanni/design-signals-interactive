@@ -131,7 +131,7 @@ if (GENERATE_MD) {
       )
     );
     lines.push("---", "");
-    lines.push(`## Chemicals used in the _${vertical}_ sector`);
+    lines.push(`# Chemicals used in the _${vertical}_ sector`);
     lines.push("");
     lines.push(lorem.generateParagraphs(3).replace(/\n/g, "\n\n"));
 

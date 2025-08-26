@@ -84,10 +84,10 @@
 }
 ---
 
-## Chemicals used in the _Bio-Organic Intermediates_ sector
+# Chemicals used in the _Bio-Organic Intermediates_ sector
 
-Tempor excepteur nisi aliquip. Sint id id mollit pariatur esse voluptate laborum. Fugiat eiusmod Lorem commodo fugiat ipsum esse. Cupidatat velit aliqua non enim irure qui non occaecat non.
+Adipisicing sunt non sit ex. Lorem nisi qui excepteur velit sunt. Laboris voluptate pariatur quis exercitation in ullamco.
 
-Ex id excepteur cillum anim ut fugiat aliquip adipisicing esse deserunt. Magna labore sunt velit cillum officia est do incididunt labore. Aliquip incididunt adipisicing irure minim culpa.
+Tempor sint deserunt incididunt in id elit ipsum ipsum ullamco culpa. Culpa laboris voluptate dolor aute veniam consequat. Minim officia laborum occaecat incididunt aute ad. Anim sit duis esse cillum officia eu et qui esse duis ex.
 
-Et deserunt sint adipisicing ut laborum laborum aliqua veniam fugiat exercitation. Magna ut exercitation eiusmod exercitation cillum cupidatat. Ad magna incididunt enim ipsum enim irure veniam dolore. Magna eu ex et excepteur laborum esse minim.
+Labore dolore proident et aliqua velit excepteur incididunt enim id ad. Aliqua aliqua amet deserunt ipsum culpa. Nostrud qui Lorem quis laboris eu nisi exercitation cillum. Sunt mollit eu dolore proident et do.

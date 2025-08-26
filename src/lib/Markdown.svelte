@@ -49,8 +49,14 @@
     font-size: 24px;
     height: 98vh;
     overflow: hidden;
+
     :global(h1) {
       font-size: 3em;
+      color: var(--primary);
+    }
+
+    :global(em) {
+      font-style: normal;
       color: var(--secondary);
     }
   }

@@ -42,10 +42,10 @@
 }
 ---
 
-## Chemicals used in the _Rubber Industry_ sector
+# Chemicals used in the _Rubber Industry_ sector
 
-Ex cupidatat ex magna ex voluptate minim eu. Officia fugiat tempor esse. Dolor veniam occaecat duis dolore cupidatat veniam magna ullamco Lorem.
+Minim nisi labore voluptate ut. Labore nisi non sunt deserunt minim mollit.
 
-Eiusmod ea culpa exercitation pariatur laborum occaecat qui nulla culpa veniam duis. Qui commodo consequat id mollit ullamco sit deserunt laborum dolore tempor.
+Ea excepteur minim mollit cillum velit aliquip laboris esse. Laborum reprehenderit quis pariatur. Esse elit mollit mollit nisi est dolore Lorem.
 
-Voluptate ipsum officia enim occaecat eiusmod anim. Deserunt dolor anim commodo irure dolor aliqua est nisi aliqua ipsum.
+Aute eu eiusmod non nostrud minim reprehenderit commodo cillum consectetur. Consectetur aliqua ullamco eu aliquip nisi. Proident minim ipsum elit tempor esse minim ad eu nulla. Officia velit exercitation ex eu sit incididunt sint.

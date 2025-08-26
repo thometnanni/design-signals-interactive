@@ -30,10 +30,10 @@
 }
 ---
 
-## Chemicals used in the _Dyes and Pigments_ sector
+# Chemicals used in the _Dyes and Pigments_ sector
 
-Exercitation consequat sint laborum nostrud qui ea qui tempor. Laboris pariatur nulla consequat quis. Id Lorem eiusmod id adipisicing nostrud ut. Exercitation ex culpa duis irure voluptate exercitation.
+Ipsum laborum sunt non. Ea cillum duis Lorem eiusmod ullamco cillum sit et quis.
 
-Dolore incididunt Lorem incididunt sit enim irure nulla excepteur laboris dolor. Duis ex ullamco esse aliqua aliquip cillum reprehenderit labore.
+Laboris deserunt qui magna occaecat ex aute velit non dolore enim. Tempor eiusmod aliqua cupidatat proident laborum deserunt eu eu non.
 
-Dolor aliquip ad quis do sunt duis in. Eu ex tempor sint velit voluptate anim aute exercitation ex deserunt non.
+Voluptate aliquip consequat dolor commodo deserunt eiusmod esse ea. Reprehenderit nostrud do consequat anim eu aliqua ut ea nulla nostrud. Velit exercitation ex irure quis excepteur sit anim. Deserunt quis ipsum nostrud sunt aliquip esse cillum Lorem aute eiusmod deserunt.

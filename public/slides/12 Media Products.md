@@ -24,10 +24,10 @@
 }
 ---
 
-## Chemicals used in the _Media Products_ sector
+# Chemicals used in the _Media Products_ sector
 
-Adipisicing consequat pariatur consequat non. Culpa proident ut qui aute velit reprehenderit. Velit sit quis nostrud ullamco occaecat id ipsum enim cupidatat. Ex do adipisicing proident culpa consectetur laboris.
+Voluptate qui consequat id amet dolore. Irure qui mollit ea laboris aliqua.
 
-Ut ad qui aliqua ipsum enim eu ea reprehenderit duis et. Aliquip nostrud proident adipisicing quis officia. Enim aute ex ipsum non velit magna anim nisi elit sint aliquip. Ipsum ipsum reprehenderit cillum tempor non reprehenderit.
+Cillum esse adipisicing velit ut consequat adipisicing anim consectetur. Mollit elit dolor mollit id aute velit commodo. Duis voluptate et ullamco occaecat nisi aliquip sunt aute elit eiusmod.
 
-Veniam laboris magna anim Lorem. Nisi ipsum minim nulla irure ea.
+Esse proident anim aliqua officia. Sint aliqua eu nulla id. Eiusmod aliquip excepteur tempor anim amet minim aute duis est nulla.

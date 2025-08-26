@@ -36,10 +36,10 @@
 }
 ---
 
-## Chemicals used in the _Cosmetics and Personal Care_ sector
+# Chemicals used in the _Cosmetics and Personal Care_ sector
 
-Sint exercitation adipisicing consectetur. Laboris elit adipisicing magna minim consequat et elit. Quis labore Lorem ullamco voluptate aliquip culpa commodo. Magna aute velit nisi fugiat.
+Dolor consectetur sunt labore officia cillum sint consectetur tempor. Officia nostrud id dolor exercitation. Deserunt dolor reprehenderit esse. Culpa cupidatat Lorem exercitation minim.
 
-Tempor incididunt mollit aliqua ipsum magna sit exercitation. Sit labore occaecat laboris cupidatat ex dolor amet esse. Minim commodo est mollit enim.
+Elit mollit culpa consectetur culpa officia laborum esse ipsum qui laborum. Velit magna magna deserunt mollit quis est veniam nulla. Eu qui commodo velit nostrud eu esse eiusmod nulla excepteur excepteur. Pariatur deserunt enim velit.
 
-Est occaecat officia anim consequat nisi labore. Dolore consectetur aliquip veniam pariatur pariatur fugiat veniam eiusmod incididunt nostrud. Lorem officia sit consectetur aliquip enim.
+Qui Lorem enim eu do reprehenderit culpa exercitation culpa do. Cillum amet fugiat pariatur nisi amet qui. Aliqua irure mollit quis tempor esse nisi. Esse eiusmod dolore do sit deserunt amet.

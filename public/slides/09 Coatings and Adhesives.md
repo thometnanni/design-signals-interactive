@@ -36,10 +36,10 @@
 }
 ---
 
-## Chemicals used in the _Coatings and Adhesives_ sector
+# Chemicals used in the _Coatings and Adhesives_ sector
 
-Anim commodo est exercitation. Laboris est et culpa magna exercitation consectetur proident nisi ex. Magna labore adipisicing in aliqua aliqua. Mollit dolor laboris id excepteur non dolor incididunt nulla ex.
+Officia non officia sint sit ut in. Veniam duis reprehenderit occaecat. Ex sint esse aliquip amet minim deserunt proident enim. Ipsum eiusmod minim est officia qui aliquip cillum.
 
-Consequat et ipsum ullamco labore adipisicing id culpa mollit. Laboris commodo magna excepteur aliquip irure cupidatat occaecat qui ut ullamco. In enim occaecat qui ullamco voluptate. Pariatur excepteur anim proident amet.
+Consequat quis elit eiusmod reprehenderit Lorem qui. Elit non aliqua sunt magna. Officia ad ex ullamco pariatur magna culpa. Minim sint officia mollit magna nulla ex tempor.
 
-Officia Lorem ipsum eiusmod incididunt irure nostrud. Enim nisi culpa laborum exercitation veniam. Velit cupidatat minim labore ut quis anim consectetur pariatur tempor enim id. Laborum dolore exercitation deserunt sunt ipsum.
+Cillum eiusmod dolor deserunt anim consectetur. Nisi consequat anim proident nulla enim elit sunt consequat minim pariatur. Excepteur laboris ad veniam. Sint veniam pariatur et id irure.
