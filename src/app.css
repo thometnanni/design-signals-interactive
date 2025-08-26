@@ -17,6 +17,7 @@
   --secondary: rgb(195, 60, 11);
 
   --color-line-chart: var(--primary);
+  --color-chart-label: var(--primary);
 
   --color-axis: var(--secondary);
   --color-axis-labels: var(--color-axis);

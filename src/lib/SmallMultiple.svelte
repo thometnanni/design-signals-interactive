@@ -13,6 +13,8 @@
     scaleType,
     scaleParam,
     filter,
+    zoom,
+    config,
   } = $props();
 
   let yScale = $derived.by(() => {
@@ -62,9 +64,44 @@
   function handleMouseLeave() {
     onMouseOut?.();
   }
+
+  let firstYearY = $derived(yScale(values[0]));
+  let lastYearY = $derived(yScale(values[years.length - 1]));
+
+  let labelY = $derived(
+    config.label === "top"
+      ? yScale(Math.max(...values)) - 20 / zoom
+      : yScale(Math.min(...values)) + 20 / zoom
+  );
 </script>
 
 <g class={[section, product, group, { faded }]}>
+  <g>
+    <text
+      transform="translate({-width / 2 - 5 / zoom}, {firstYearY}) scale({1 /
+        zoom})"
+      class="first year">’{`${years[0]}`.replace(/^[0-9]{2}/, "")}</text
+    >
+    <text
+      transform="translate({width / 2 + 5 / zoom}, {lastYearY}) scale({1 /
+        zoom})"
+      class="last year"
+      >’{`${years[years.length - 1]}`.replace(/^[0-9]{2}/, "")}</text
+    >
+    <!-- <text
+      transform="translate({-width / 2}, {labelY}) scale({1 / zoom})"
+      class={["label", config.label]}>{product}</text
+    > -->
+    <g
+      transform="translate({-width / 2}, {config.label === 'bottom'
+        ? 10
+        : -100}) scale({1 / zoom})"
+    >
+      <foreignObject width={width * zoom} height="50">
+        <div class={["label", config.label]}>{product}</div>
+      </foreignObject>
+    </g>
+  </g>
   <path class="visual" d={path}></path>
   <path
     class="interaction"
@@ -95,6 +132,12 @@
         opacity: 0.2;
         transition: opacity 0.75s;
       }
+
+      text,
+      div {
+        opacity: 0;
+        transition: opacity 0s;
+      }
     }
 
     path {
@@ -116,11 +159,53 @@
         /* opacity: 1; */
       }
     }
-  }
 
-  .chemicals {
-    path {
-      /* opacity: 1; */
+    text {
+      transition: opacity 0s 1.5s;
+      text-anchor: middle;
+      font-size: 16px;
+      fill: var(--color-chart-label);
+
+      &.label {
+        text-anchor: start;
+        dominant-baseline: text-bottom;
+        &.bottom {
+          dominant-baseline: text-top;
+        }
+      }
+
+      &.year {
+        dominant-baseline: middle;
+        fill: var(--secondary);
+
+        &.first {
+          text-anchor: end;
+        }
+
+        &.last {
+          text-anchor: start;
+        }
+      }
+    }
+
+    foreignObject {
+      overflow: visible;
+    }
+
+    div {
+      transition: opacity 0s 1.5s;
+      text-anchor: middle;
+      font-size: 16px;
+      color: var(--color-chart-label);
+
+      &.label {
+        text-anchor: start;
+        dominant-baseline: text-bottom;
+        &.top {
+          transform: translateY(-100%);
+          /* dominant-baseline: text-top; */
+        }
+      }
     }
   }
 </style>

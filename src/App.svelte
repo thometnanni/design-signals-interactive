@@ -32,6 +32,7 @@
   let slideId = $state(0);
 
   let animationFrame = null;
+  let plays = $state(false);
   function loop(t) {
     // if (!play) return;
 
@@ -39,7 +40,7 @@
 
     progress = (p % 1) * 100;
     slideId = Math.floor(p);
-
+    plays = true;
     animationFrame = requestAnimationFrame(loop);
   }
 
@@ -65,7 +66,7 @@
           values: config.products.map(({ code }) => code),
         };
 
-        return { filter, md };
+        return { filter, md, products: config.products };
       })
     )
   );
@@ -75,10 +76,19 @@
 
     return () => cancelAnimationFrame(animationFrame);
   });
+
+  function togglePlay() {
+    if (!plays) return requestAnimationFrame(loop);
+    cancelAnimationFrame(animationFrame);
+    plays = false;
+  }
 </script>
 
 <main>
   <nav>
+    <button onclick={togglePlay} aria-label="play pause loop"
+      >{plays ? "pause" : "play"}</button
+    >
     <select bind:value={xParam}>
       {#each parameters as param}
         <option value={param}>{param}</option>
@@ -115,6 +125,7 @@
     {scaleType}
     {scaleParam}
     filter={slide?.filter}
+    products={slide?.products}
   />
   <Markdown md={slide?.md} />
 </main>

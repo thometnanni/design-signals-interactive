@@ -5,8 +5,16 @@
   import SmallMultiple from "./SmallMultiple.svelte";
   import { scaleLinear } from "d3-scale";
   import { easeQuadInOut } from "d3-ease";
-  let { data, xParam, allSections, groupParam, scaleType, scaleParam, filter } =
-    $props();
+  let {
+    data,
+    xParam,
+    allSections,
+    groupParam,
+    scaleType,
+    scaleParam,
+    filter,
+    products,
+  } = $props();
 
   let container;
   let chartWidth = $state(0);
@@ -226,6 +234,8 @@
       .call(zoomBehavior.transform, t);
   });
 
+  $effect(() => console.log(products));
+
   const getAxisPosition = (axis, fraction) => {
     const k = transform?.k ?? 1;
     const tx = transform?.x ?? 0;
@@ -275,6 +285,8 @@
                 {filter}
                 {scaleType}
                 {scaleParam}
+                zoom={transform?.k ?? 1}
+                config={products?.find((p) => p.code === item["HS92-4"]) ?? {}}
               ></SmallMultiple>
             </g>
           {/if}
@@ -487,7 +499,7 @@
     .axes {
       line {
         stroke: var(--color-axis);
-        opacity: 0.2;
+        opacity: 0.15;
       }
 
       .level-1 {
@@ -495,7 +507,7 @@
       }
 
       .level-2 {
-        opacity: 0.5;
+        opacity: 0.4;
       }
 
       .outside {
