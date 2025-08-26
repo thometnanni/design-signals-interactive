@@ -9,7 +9,7 @@
   //   slideFiles.map((file) => fetch(file).then((d) => d.text()))
   // );
 
-  const slideDuration = 20;
+  const slideDuration = 10;
 
   const parameters = $derived(data.parameterKeys);
   const verticals = $derived(
