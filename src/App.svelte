@@ -56,13 +56,16 @@
   let slide = $derived(
     await fetch(`slides/${slides[slideId]}`).then((d) =>
       d.text().then((text) => {
-        const [, filter, md] = text
-          .match(/(^.*:.*[\r\n])?([\s\S]*)/)
-          .map((t) => t?.trim());
+        const [, json, md] = text.split("---\n").map((t) => t?.trim());
 
-        const [key, value] = filter?.split(":").map((f) => f.trim()) ?? [];
-        const values = value?.split(",").map((v) => v.trim());
-        return { filter: { key, values }, md };
+        const config = JSON.parse(json || '{"products":[]}');
+
+        const filter = {
+          key: config.products.length > 0 ? "HS92-4" : null,
+          values: config.products.map(({ code }) => code),
+        };
+
+        return { filter, md };
       })
     )
   );

@@ -47,6 +47,8 @@
     border-left: 1px solid var(--secondary);
     color: var(--primary);
     font-size: 24px;
+    height: 98vh;
+    overflow: hidden;
     :global(h1) {
       font-size: 3em;
       color: var(--secondary);

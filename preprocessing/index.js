@@ -1,6 +1,10 @@
 import * as XLSX from "xlsx/xlsx.mjs";
 import * as fs from "fs";
+import { LoremIpsum } from "lorem-ipsum";
 XLSX.set_fs(fs);
+
+const args = process.argv.slice(2);
+const GENERATE_MD = args.includes("--generate-md");
 
 const workbook = XLSX.readFile(
   "./preprocessing/data/Romania's Global trade.xlsx",
@@ -82,6 +86,68 @@ fs.writeFileSync(
     items,
   })
 );
+
+if (GENERATE_MD) {
+  const lorem = new LoremIpsum({
+    sentencesPerParagraph: {
+      max: 4,
+      min: 2,
+    },
+    wordsPerSentence: {
+      max: 12,
+      min: 4,
+    },
+    suffix: "\n",
+  });
+
+  const verticals = [...new Set(items.map((i) => i["Chemical Vertical"]))];
+  verticals.forEach((vertical, i) => {
+    const finalYear = years.length - 1;
+    const products = items.filter(
+      (item) => item["Chemical Vertical"] === vertical
+    );
+    const lines = [];
+    lines.push("---");
+
+    lines.push(
+      JSON.stringify(
+        {
+          _title: vertical,
+          products: products.map((product) => {
+            return {
+              code: product["HS92-4"],
+              _name: product["Product Name"],
+              label:
+                product.parameters.tradeBalanceDiff[finalYear] > 0
+                  ? "top"
+                  : "bottom",
+              years: true,
+              ticks: {},
+            };
+          }),
+        },
+        null,
+        2
+      )
+    );
+    lines.push("---", "");
+    lines.push(`## Chemicals used in the _${vertical}_ sector`);
+    lines.push("");
+    lines.push(lorem.generateParagraphs(3).replace(/\n/g, "\n\n"));
+
+    const fileNumber = (() => {
+      const fileNumber = i + 1;
+      return fileNumber < 10 ? `0${fileNumber}` : fileNumber;
+    })();
+    fs.writeFileSync(
+      `./public/slides/${fileNumber} ${vertical.replace(
+        /[/\\:?*"<>|]/g,
+        "_"
+      )}.md`,
+      lines.join("\n")
+    );
+  });
+}
 
 const slides = fs.readdirSync("./public/slides");
 
