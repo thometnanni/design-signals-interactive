@@ -1,13 +1,26 @@
 <script>
+  import { zoom, zoomIdentity } from "d3-zoom";
+  import { select } from "d3-selection";
+  import { onMount } from "svelte";
   import SmallMultiple from "./SmallMultiple.svelte";
   import { scaleLinear } from "d3-scale";
+  import {
+    easeCubicIn,
+    easeCubicInOut,
+    easeCubicOut,
+    easeQuadInOut,
+  } from "d3-ease";
   let { data, xParam, allSections, groupParam, scaleType, scaleParam, filter } =
     $props();
 
+  let container;
   let chartWidth = $state(0);
   let chartHeight = $state(0);
   let svgEl;
   let hoveredItem = $state(null);
+
+  let selection;
+  let zoomBehavior;
 
   const paddingTop = 50;
   const paddingBottom = 50;
@@ -110,123 +123,327 @@
         return { center, x, outside, level };
       })
   );
+
+  let transform = $state();
+
+  onMount(() => {
+    selection = select(container);
+
+    zoomBehavior = zoom()
+      .scaleExtent([1, 3])
+      .on("zoom", (event) => {
+        transform = event.transform;
+      });
+
+    selection.call(zoomBehavior);
+
+    return () => {
+      selection.on(".zoom", null);
+    };
+  });
+
+  const items = $derived(
+    data.items.map((item) => {
+      const x = xScale(item.parameters[xParam][mostRecent]);
+      const y = yScale(item.parameters.tradeBalanceDiff[mostRecent]);
+
+      return {
+        x,
+        y,
+        ...item,
+      };
+    })
+  );
+
+  const extent = $derived.by(() => {
+    if (filter.key == null) return [0, 0, axisWidth, axisHeight];
+
+    const active = items.filter((item) =>
+      filter?.values?.includes(item[filter?.key])
+    );
+
+    const minX = Math.max(
+      Math.min(axisWidth / 2, ...active.map(({ x }) => x)) - axisWidth / 16,
+      0
+    );
+    const maxX = Math.min(
+      Math.max(
+        axisWidth / 2,
+        ...active.map(({ x }) => x + smallMultipleWidth)
+      ) +
+        axisWidth / 16,
+      axisWidth
+    );
+
+    const minY = Math.max(
+      Math.min(axisHeight / 2, ...active.map(({ y }) => y)) - axisHeight / 16,
+      0
+    );
+    const maxY = Math.min(
+      Math.max(
+        axisHeight / 2,
+        ...active.map(({ y }) => y + smallMultipleHeight)
+      ) +
+        axisHeight / 16,
+      axisHeight
+    );
+
+    return [minX, minY, maxX, maxY];
+  });
+
+  $effect(() => {
+    if (!extent || !selection || !zoomBehavior) return;
+
+    const [minX, minY, maxX, maxY] = extent;
+    const extW = Math.max(1, maxX - minX);
+    const extH = Math.max(1, maxY - minY);
+
+    // compute scale to fit extent into available inner chart area, leave a small margin
+    const margin = 1;
+    let k = Math.min(axisWidth / extW, axisHeight / extH) * margin;
+
+    // clamp to zoomBehavior scaleExtent
+    const [minK, maxK] = zoomBehavior.scaleExtent();
+    k = Math.max(minK, Math.min(maxK, k));
+
+    // extent is positioned inside the axes group which is translated by paddingLeft/paddingTop
+    const targetCenterX = paddingLeft + minX + extW / 2;
+    const targetCenterY = paddingTop + minY + extH / 2;
+
+    // compute translation so the target center is centered in the SVG viewport
+    let tx = chartWidth / 2 - k * targetCenterX;
+    let ty = chartHeight / 2 - k * targetCenterY;
+
+    const x0 = 0;
+    const y0 = 0;
+    const x1 = chartWidth;
+    const y1 = chartHeight;
+    const minTx = chartWidth - k * x1;
+    const maxTx = -k * x0;
+    const minTy = chartHeight - k * y1;
+    const maxTy = -k * y0;
+    tx = Math.max(minTx, Math.min(maxTx, tx));
+    ty = Math.max(minTy, Math.min(maxTy, ty));
+
+    const t = zoomIdentity.translate(tx, ty).scale(k);
+
+    // apply a transition
+    selection
+      .transition()
+      .duration(750)
+      .ease(easeQuadInOut)
+      .call(zoomBehavior.transform, zoomIdentity)
+      .transition()
+      .ease(easeQuadInOut)
+      .duration(750)
+      .call(zoomBehavior.transform, t);
+  });
+
+  const getAxisPosition = (axis, fraction) => {
+    const k = transform?.k ?? 1;
+    const tx = transform?.x ?? 0;
+    const ty = transform?.y ?? 0;
+
+    switch (axis) {
+      case "x": {
+        // content (data) coordinate along x (include left padding)
+        const contentX = paddingLeft + axisWidth * fraction;
+        // screen coordinate after zoom/pan: k * content + tx
+        return k * contentX + tx - paddingLeft;
+      }
+      case "y": {
+        const contentY = paddingTop + axisHeight * fraction;
+        return k * contentY + ty - paddingTop;
+      }
+    }
+  };
 </script>
 
 <svg
   width="100%"
   height="100%"
-  bind:this={svgEl}
+  bind:this={container}
   bind:clientWidth={chartWidth}
   bind:clientHeight={chartHeight}
 >
-  <g
-    transform="translate({paddingLeft + smallMultipleWidth / 2}, {paddingTop +
-      smallMultipleHeight / 2})"
-  >
-    <g class="items">
-      {#each data.items as item}
-        {#if allSections || item["HS92 Section"] === "Chemicals"}
-          <g
-            transform="translate({xScale(
-              item.parameters[xParam][mostRecent]
-            )}, {yScale(item.parameters.tradeBalanceDiff[mostRecent])})"
-          >
-            <SmallMultiple
-              {item}
-              values={item.parameters.tradeBalanceDiff}
-              years={data.years}
-              {yDomain}
-              width={smallMultipleWidth}
-              height={smallMultipleHeight}
-              onHover={handleItemHover}
-              onMouseOut={handleItemMouseOut}
-              {groupParam}
-              {filter}
-              {scaleType}
-              {scaleParam}
-            ></SmallMultiple>
+  <g {transform}>
+    <g
+      transform="translate({paddingLeft + smallMultipleWidth / 2}, {paddingTop +
+        smallMultipleHeight / 2})"
+    >
+      <g class="items">
+        {#each items as item}
+          {#if allSections || item["HS92 Section"] === "Chemicals"}
+            <g transform="translate({item.x}, {item.y})">
+              <SmallMultiple
+                {item}
+                values={item.parameters.tradeBalanceDiff}
+                years={data.years}
+                {yDomain}
+                width={smallMultipleWidth}
+                height={smallMultipleHeight}
+                onHover={handleItemHover}
+                onMouseOut={handleItemMouseOut}
+                {groupParam}
+                {filter}
+                {scaleType}
+                {scaleParam}
+              ></SmallMultiple>
+            </g>
+          {/if}
+        {/each}
+      </g>
+    </g>
+    <g class="axes" transform="translate({paddingLeft}, {paddingTop})">
+      <!-- {#if extent}
+        <rect
+          class="extent"
+          x={extent[0]}
+          y={extent[1]}
+          width={extent[2] - extent[0]}
+          height={extent[3] - extent[1]}
+        />
+      {/if} -->
+      <g class="y-ticks">
+        {#each yTicks as { center, outside, y, level }}
+          <g transform="translate(0, {y})">
+            <line
+              x2={axisWidth}
+              class={[`level-${level}`, { center, outside }]}
+            />
           </g>
-        {/if}
-      {/each}
+        {/each}
+      </g>
+      <g class="x-ticks">
+        {#each xTicks as { center, outside, x, level }}
+          <g transform="translate({x}, 0)">
+            <line
+              y2={axisHeight}
+              class={[`level-${level}`, { center, outside }]}
+            />
+          </g>
+        {/each}
+      </g>
     </g>
   </g>
-  <g class="axes" transform="translate({paddingLeft}, {paddingTop})">
-    <g class="y-ticks">
-      {#each yTicks as { center, outside, y, level }}
-        <g transform="translate(0, {y})">
-          <line
-            x2={axisWidth}
-            class={[`level-${level}`, { center, outside }]}
-          />
-        </g>
-      {/each}
+  <g>
+    <g class="backgrounds">
+      <rect height={paddingTop} width={chartWidth} />
+      <rect
+        y={chartHeight - paddingTop}
+        height={paddingTop}
+        width={chartWidth}
+      />
+      <rect height={chartHeight} width={paddingLeft} />
+      <rect
+        x={chartWidth - paddingLeft}
+        height={chartHeight}
+        width={paddingLeft}
+      />
     </g>
-    <g class="x-ticks">
-      {#each xTicks as { center, outside, x, level }}
-        <g transform="translate({x}, 0)">
-          <line
-            y2={axisHeight}
-            class={[`level-${level}`, { center, outside }]}
-          />
-        </g>
-      {/each}
-    </g>
-    <g class="labels">
-      {#each [0, 1] as index}
-        <g
-          transform="translate(0, {(axisHeight + paddingTop) * index -
-            paddingTop / 2})"
-        >
-          <text x={axisWidth / 2} text-anchor="middle">
-            product complexity
-          </text>
-          <text transform="translate({axisWidth * 0.125}, 0)"> low </text>
-          <text transform="translate({axisWidth * 0.875}, 0)"> high </text>
-          <text transform="translate({axisWidth * 0.75}, 0)"> → </text>
-          <text transform="translate({axisWidth * 0.25}, 0)"> ← </text>
-          <text transform="translate({axisWidth * 0.625}, 0)"> → </text>
-          <text transform="translate({axisWidth * 0.375}, 0)"> ← </text>
-          {#if !index}
-            <text transform="translate({axisWidth + paddingLeft / 2}, 0)">
-              +
-            </text>
-          {:else}
-            <text transform="translate({-paddingLeft / 2}, 0)"> –</text>
-          {/if}
-        </g>
-      {/each}
 
-      {#each [0, 1] as index}
-        <g
-          transform="translate({(axisWidth + paddingLeft) * index -
-            paddingLeft / 2}, 0)"
-        >
-          <text
-            text-anchor="middle"
-            transform="translate(0, {axisHeight / 2}) rotate(-90)"
+    <g class="axes" transform="translate({paddingLeft}, {paddingTop})">
+      <g class="labels">
+        {#each [0, 1] as index}
+          <g
+            transform="translate(0, {(axisHeight + paddingTop) * index -
+              paddingTop / 2})"
           >
-            trade balance
-          </text>
-          <text transform="translate(0, {axisHeight * 0.125}) rotate(-90)">
-            largely exported
-          </text>
-          <text transform="translate(0, {axisHeight * 0.875}) rotate(-90)">
-            largely imported
-          </text>
-          <text transform="translate(0, {axisHeight * 0.75}) rotate(-90)">
-            ←
-          </text>
-          <text transform="translate(0, {axisHeight * 0.25}) rotate(-90)">
-            →
-          </text>
-          <text transform="translate(0, {axisHeight * 0.625}) rotate(-90)">
-            ←
-          </text>
-          <text transform="translate(0, {axisHeight * 0.375}) rotate(-90)">
-            →
-          </text>
-        </g>
-      {/each}
+            <text transform="translate({getAxisPosition('x', 0.5)}, 0)">
+              product complexity
+            </text>
+            <text transform="translate({getAxisPosition('x', 0.125)}, 0)">
+              low
+            </text>
+            <text transform="translate({getAxisPosition('x', 0.875)}, 0)">
+              high
+            </text>
+            <text transform="translate({getAxisPosition('x', 0.75)}, 0)">
+              →
+            </text>
+            <text transform="translate({getAxisPosition('x', 0.25)}, 0)">
+              ←
+            </text>
+            <text transform="translate({getAxisPosition('x', 0.625)}, 0)">
+              →
+            </text>
+            <text transform="translate({getAxisPosition('x', 0.375)}, 0)">
+              ←
+            </text>
+            <!-- {#if !index}
+              <text
+                transform="translate({getAxisPosition('x', 1) +
+                  paddingLeft / 2}, 0)"
+              >
+                +
+              </text>
+            {:else}
+              <text transform="translate({getAxisPosition('x', 0)}, 0">
+                –
+              </text>
+            {/if} -->
+          </g>
+        {/each}
+
+        {#each [0, 1] as index}
+          <g
+            transform="translate({(axisWidth + paddingLeft) * index -
+              paddingLeft / 2}, 0)"
+          >
+            <text
+              text-anchor="middle"
+              transform="translate(0, {getAxisPosition(
+                'y',
+                1 / 2
+              )}) rotate(-90)"
+            >
+              trade balance
+            </text>
+            <text
+              transform="translate(0, {getAxisPosition(
+                'y',
+                0.125
+              )}) rotate(-90)"
+            >
+              largely exported
+            </text>
+            <text
+              transform="translate(0, {getAxisPosition(
+                'y',
+                0.875
+              )}) rotate(-90)"
+            >
+              largely imported
+            </text>
+            <text
+              transform="translate(0, {getAxisPosition('y', 0.75)}) rotate(-90)"
+            >
+              ←
+            </text>
+            <text
+              transform="translate(0, {getAxisPosition('y', 0.25)}) rotate(-90)"
+            >
+              →
+            </text>
+            <text
+              transform="translate(0, {getAxisPosition(
+                'y',
+                0.625
+              )}) rotate(-90)"
+            >
+              ←
+            </text>
+            <text
+              transform="translate(0, {getAxisPosition(
+                'y',
+                0.375
+              )}) rotate(-90)"
+            >
+              →
+            </text>
+          </g>
+        {/each}
+      </g>
     </g>
   </g>
   <!-- Metadata display -->
@@ -272,6 +489,14 @@
   svg {
     cursor: crosshair;
 
+    * {
+      vector-effect: non-scaling-stroke;
+    }
+
+    .backgrounds rect {
+      fill: var(--background);
+    }
+
     .axes {
       line {
         stroke: var(--color-axis);
@@ -295,6 +520,11 @@
         fill: var(--color-axis-labels);
         text-anchor: middle;
       }
+    }
+
+    .extent {
+      fill: red;
+      opacity: 0.1;
     }
   }
 </style>

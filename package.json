@@ -16,7 +16,10 @@
     "xlsx": "^0.18.5"
   },
   "dependencies": {
+    "d3-ease": "^3.0.1",
     "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
     "marked": "^16.2.0"
   }
 }

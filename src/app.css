@@ -12,6 +12,7 @@
     margin: 0;
   }
 
+  --background: white;
   --primary: rgb(16, 1, 75);
   --secondary: rgb(195, 60, 11);
 

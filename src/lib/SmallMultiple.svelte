@@ -51,10 +51,9 @@
     groupParam && groupParam === item["Chemical Vertical"] ? "group" : ""
   );
 
-  let faded = $derived.by(() => {
-    console.log(filter?.key, filter?.values?.includes(item[filter?.key]));
-    return filter?.key != null && !filter?.values?.includes(item[filter?.key]);
-  });
+  let faded = $derived(
+    filter?.key != null && !filter?.values?.includes(item[filter?.key])
+  );
 
   function handleMouseEnter() {
     onHover?.(item);
@@ -82,6 +81,9 @@
 
 <style>
   g {
+    * {
+      vector-effect: non-scaling-stroke;
+    }
     &.group {
       path {
         stroke: rgb(237, 69, 27);
@@ -91,6 +93,7 @@
     &.faded {
       path {
         opacity: 0.2;
+        transition: opacity 0.75s;
       }
     }
 
@@ -99,6 +102,8 @@
       fill: none;
       stroke-width: 1;
       stroke: var(--color-line-chart);
+
+      transition: opacity 0.75s 0.75s;
     }
 
     path.interaction {
