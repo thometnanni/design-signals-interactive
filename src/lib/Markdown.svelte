@@ -103,7 +103,7 @@
     }
 
     .counter {
-      font-size: 1vw;
+      font-size: .8vw;
       color: var(--secondary);
       width: 3vw;
     }
