@@ -5,7 +5,7 @@
   import slides from "./slides.json";
   import Markdown from "./lib/Markdown.svelte";
 
-  const slideDuration = 20;
+  const slideDuration = 50;
 
   const parameters = $derived(data.parameterKeys);
   const verticals = $derived(
@@ -70,20 +70,36 @@
     return () => cancelAnimationFrame(animationFrame);
   });
 
-  function togglePlay() {
-    if (!plays) return requestAnimationFrame(loop);
-    cancelAnimationFrame(animationFrame);
-    plays = false;
+  function goToSlide(n) {
+    const len = slides.length;
+    slideId = ((n % len) + len) % len;
+    progress = 0;
+  }
+
+  function prevSlide() {
+    if (plays) {
+      cancelAnimationFrame(animationFrame);
+      plays = false;
+    }
+    goToSlide(slideId - 1);
+  }
+
+  function nextSlide() {
+    if (plays) {
+      cancelAnimationFrame(animationFrame);
+      plays = false;
+    }
+    goToSlide(slideId + 1);
   }
 </script>
 
 <main>
   <nav>
-    <button onclick={togglePlay} aria-label="play pause loop">
-      {plays ? "pause" : "play"}
-    </button>
+    <button onclick={prevSlide} aria-label="previous chapter">prev</button>
 
-    <select bind:value={xParam}>
+    <button onclick={nextSlide} aria-label="next chapter">next </button>
+
+    <!-- <select bind:value={xParam}>
       {#each parameters as param}
         <option value={param}>{param}</option>
       {/each}
@@ -109,7 +125,7 @@
     <label>
       <input type="number" bind:value={scaleParam} />
       scale parameter
-    </label>
+    </label> -->
   </nav>
   <Scatter
     {data}
