@@ -27,14 +27,20 @@
 
   let animationFrame = null;
   let plays = $state(false);
+  let slideStart = $state(performance.now());
+
   function loop(t) {
-    // if (!play) return;
+    const slideMs = slideDuration * 1000;
+    const elapsed = t - slideStart;
 
-    const p = (t / 1000 / slideDuration) % slides.length;
+    progress = Math.min(100, (elapsed / slideMs) * 100);
 
-    progress = (p % 1) * 100;
-    slideId = Math.floor(p);
-    plays = true;
+    if (elapsed >= slideMs) {
+      slideId = (slideId + 1) % slides.length;
+      slideStart = t;
+      progress = 0;
+    }
+
     animationFrame = requestAnimationFrame(loop);
   }
 
@@ -74,21 +80,15 @@
     const len = slides.length;
     slideId = ((n % len) + len) % len;
     progress = 0;
+    slideStart = performance.now();
+    if (!animationFrame) animationFrame = requestAnimationFrame(loop);
   }
 
   function prevSlide() {
-    if (plays) {
-      cancelAnimationFrame(animationFrame);
-      plays = false;
-    }
     goToSlide(slideId - 1);
   }
 
   function nextSlide() {
-    if (plays) {
-      cancelAnimationFrame(animationFrame);
-      plays = false;
-    }
     goToSlide(slideId + 1);
   }
 </script>
@@ -138,7 +138,7 @@
     products={slide?.products}
     config={slide?.config}
   />
-  <Markdown md={slide?.md} />
+  <Markdown md={slide?.md} {progress} {slideId} totalSlides={slides.length} />
 </main>
 
 <style>
