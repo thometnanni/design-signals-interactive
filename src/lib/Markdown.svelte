@@ -64,7 +64,7 @@
     color: var(--primary);
     font-size: 2vw;
     line-height: 1.2;
-    height: calc(100vh - 2vw);
+    height: calc(100vh - 1vw);
     overflow: hidden;
     background: var(--background);
     /* display: flex;
