@@ -4,13 +4,13 @@
   "products": [
     {
       "code": "2804",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "2811",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
@@ -22,34 +22,48 @@
     },
     {
       "code": "2821",
-      "label": "bottom",
-      "years": true,
-      "ticks": {}
-    },
-    {
-      "code": "2825",
       "label": "top",
       "years": true,
       "ticks": {}
     },
     {
-      "code": "2833",
+      "code": "2825",
       "label": "bottom",
+      "years": true,
+      "ticks": {}
+    },
+    {
+      "code": "2833",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "2836",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "2843",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     }
+    ,
+    {
+      "code": "4016",
+      "label": "right",
+      "years": false,
+      "ticks": {}
+    },
+    {
+      "code": "3101",
+      "label": "top",
+      "years": true,
+      "ticks": {}
+    }
+    
   ]
 }
 ---

@@ -4,7 +4,7 @@
   "products": [
     {
       "code": "3302",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     },
@@ -22,7 +22,7 @@
     },
     {
       "code": "3402",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },

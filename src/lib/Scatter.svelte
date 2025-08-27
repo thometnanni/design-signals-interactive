@@ -171,28 +171,48 @@
     const active = items.filter((it) =>
       filter?.values?.includes(it[filter?.key])
     );
+    if (!active.length) return [0, 0, axisWidth, axisHeight];
+
+    // keep labels
+    const label_pad = 4;
+    const label_size = 10;
+    const sideOffset = label_pad * 5 + label_size * 0.4;
+    const avgChar = 0.6 * label_size;
+
+    const verticalOffset = label_pad * 2;
+
+    const extraXPerItem = active.map((it) => {
+      const text = String(it["HS92-4 Short Label"] || "");
+      const halfLabel = (text.length * avgChar) / 2;
+      return sideOffset + halfLabel;
+    });
 
     const minX = Math.max(
-      Math.min(axisWidth / 2, ...active.map(({ x }) => x)) - axisWidth / 16,
+      Math.min(
+        axisWidth / 2,
+        ...active.map(({ x }, i) => x - extraXPerItem[i])
+      ) -
+        axisWidth / 16,
       0
     );
     const maxX = Math.min(
       Math.max(
         axisWidth / 2,
-        ...active.map(({ x }) => x + smallMultipleWidth)
+        ...active.map(({ x }, i) => x + smallMultipleWidth + extraXPerItem[i])
       ) +
         axisWidth / 16,
       axisWidth
     );
 
     const minY = Math.max(
-      Math.min(axisHeight / 2, ...active.map(({ y }) => y)) - axisHeight / 16,
+      Math.min(axisHeight / 2, ...active.map(({ y }) => y - verticalOffset)) -
+        axisHeight / 16,
       0
     );
     const maxY = Math.min(
       Math.max(
         axisHeight / 2,
-        ...active.map(({ y }) => y + smallMultipleHeight)
+        ...active.map(({ y }) => y + smallMultipleHeight + verticalOffset)
       ) +
         axisHeight / 16,
       axisHeight
@@ -239,12 +259,12 @@
     // apply a transition
     selection
       .transition()
-      .duration(750)
+      .duration(1000)
       .ease(easeQuadInOut)
       .call(zoomBehavior.transform, zoomIdentity)
       .transition()
       .ease(easeQuadInOut)
-      .duration(750)
+      .duration(2000)
       .call(zoomBehavior.transform, t);
   });
 
@@ -362,7 +382,10 @@
             transform="translate(0, {(axisHeight + paddingTop) * index -
               paddingTop / 2})"
           >
-            <text transform="translate({getAxisPosition('x', 0.5)}, 0)">
+            <text
+              class="label-highlited"
+              transform="translate({getAxisPosition('x', 0.5)}, 0)"
+            >
               product complexity
             </text>
             <text transform="translate({getAxisPosition('x', 0.125)}, 0)">
@@ -404,6 +427,7 @@
               paddingLeft / 2}, 0)"
           >
             <text
+              class="label-highlited"
               text-anchor="middle"
               transform="translate(0, {getAxisPosition(
                 'y',
@@ -510,6 +534,14 @@
       fill: var(--background);
     }
 
+    text {
+      opacity: 0.4;
+
+      &.label-highlited {
+        opacity: 1;
+      }
+    }
+
     .axes {
       line {
         stroke: var(--color-axis);
@@ -522,7 +554,7 @@
       .level-2 {
         opacity: 0.3;
       }
-      
+
       .level-3 {
         opacity: 0.1;
       }

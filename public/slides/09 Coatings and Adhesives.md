@@ -10,19 +10,19 @@
     },
     {
       "code": "3215",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3824",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3906",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },

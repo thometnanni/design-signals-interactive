@@ -4,19 +4,19 @@
   "products": [
     {
       "code": "2936",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "2938",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "2939",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     }

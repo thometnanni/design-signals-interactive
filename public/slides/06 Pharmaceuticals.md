@@ -10,13 +10,13 @@
     },
     {
       "code": "2941",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3004",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },

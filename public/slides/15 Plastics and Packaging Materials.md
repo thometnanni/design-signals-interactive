@@ -16,7 +16,7 @@
     },
     {
       "code": "3916",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
@@ -40,7 +40,7 @@
     },
     {
       "code": "3926",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     }

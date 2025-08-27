@@ -5,7 +5,7 @@
   import slides from "./slides.json";
   import Markdown from "./lib/Markdown.svelte";
 
-  const slideDuration = 10;
+  const slideDuration = 5;
 
   const parameters = $derived(data.parameterKeys);
   const verticals = $derived(

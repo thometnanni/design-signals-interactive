@@ -17,8 +17,12 @@
     config,
   } = $props();
 
+  let labelPref = $derived((config?.label ?? "auto").toLowerCase());
   let showYears = $derived(config?.annotations?.years ?? true);
   let showProductLabel = $derived(config?.annotations?.label ?? true);
+
+  const label_pad = 4;
+  const label_size = 10;
 
   let yScale = $derived.by(() => {
     switch (scaleType) {
@@ -45,13 +49,43 @@
       .range([-width / 2, width / 2])
   );
 
+  function computeLabel(i, pref, text) {
+    const pad = label_pad / zoom;
+    const font = label_size / zoom;
+
+    const xs = years.map((_, k) => xScale(k));
+    const ys = values.map((v) => yScale(v));
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    const cx = (minX + maxX) / 2;
+
+    const topY = minY - pad * 2;
+    const bottomY = maxY + pad * 2;
+    const padX = pad * 5 + font * 0.4;
+    const leftX = minX - padX;
+    const rightX = maxX + padX;
+
+    const placements = {
+      top: { x: cx, y: topY, anchor: "middle", baseline: "alphabetic" },
+      bottom: { x: cx, y: bottomY, anchor: "middle", baseline: "hanging" },
+      left: { x: leftX, y: 0, anchor: "end", baseline: "middle" },
+      right: { x: rightX, y: 0, anchor: "start", baseline: "middle" },
+    };
+
+    if (pref === "auto") return placements.right;
+    return placements[pref] ?? placements.right;
+  }
+
   let path = $derived.by(() => {
-    const points = values.map((value, i) => `${xScale(i)}, ${yScale(value)}`);
+    const points = values.map((v, i) => `${xScale(i)}, ${yScale(v)}`);
     return `M${points.join(" ")}`;
   });
 
   let section = $derived(item["HS92 Section"].toLowerCase());
-  let product = $derived(item["HS92-4 Short Label"].toLowerCase());
+  let product = $derived(item["HS92-4 Short Label"]);
+  let productLower = $derived(product.toLowerCase());
   let group = $derived(
     groupParam && groupParam === item["Chemical Vertical"] ? "group" : ""
   );
@@ -63,7 +97,6 @@
   function handleMouseEnter() {
     onHover?.(item);
   }
-
   function handleMouseLeave() {
     onMouseOut?.();
   }
@@ -71,14 +104,19 @@
   let firstYearY = $derived(yScale(values[0]));
   let lastYearY = $derived(yScale(values[years.length - 1]));
 
-  let labelY = $derived(
-    (config?.label ?? "top") === "top"
-      ? yScale(Math.max(...values)) - 20 / zoom
-      : yScale(Math.min(...values)) + 20 / zoom
-  );
+  const labelIndex = $derived(() => {
+    if (labelPref === "left") return 0;
+    if (labelPref === "right") return years.length - 1;
+    return years.length - 1;
+  });
+
+  const labelPlacement = $derived.by(() => {
+    if (!showProductLabel) return null;
+    return computeLabel(labelIndex, labelPref, product);
+  });
 </script>
 
-<g class={[section, product, group, { faded }]}>
+<g class={[section, productLower, group, { faded }]}>
   <g>
     {#if showYears}
       <text
@@ -94,17 +132,14 @@
       >
     {/if}
 
-    {#if showProductLabel}
-      <g
-        transform="translate({-width / 2}, {(config?.label ?? 'top') ===
-        'bottom'
-          ? 10
-          : -100}) scale({1 / zoom})"
+    {#if showProductLabel && labelPlacement}
+      <text
+        text-anchor={labelPlacement.anchor}
+        dominant-baseline={labelPlacement.baseline}
+        font-size={label_size / zoom * 1.1}
+        transform="translate({labelPlacement.x}, {labelPlacement.y})"
+        class="product-label">{product}</text
       >
-        <foreignObject width={width * zoom} height="50">
-          <div class={["label", config?.label ?? "top"]}>{product}</div>
-        </foreignObject>
-      </g>
     {/if}
   </g>
 
@@ -127,6 +162,7 @@
     * {
       vector-effect: non-scaling-stroke;
     }
+
     &.group {
       path {
         stroke: rgb(237, 69, 27);
@@ -135,15 +171,17 @@
 
     &.faded {
       path {
+        /* display: none; */
         opacity: 0.2;
         stroke: rgb(182, 182, 182);
-        transition: opacity 0.75s;
+        /* transition: opacity 0.75s; */
       }
 
       text,
       div {
         opacity: 0;
-        transition: opacity 0s;
+
+        /* transition: opacity 0s; */
       }
     }
 
@@ -151,7 +189,7 @@
       fill: none;
       stroke-width: 1.5;
       stroke: var(--color-line-chart);
-      transition: opacity 0.75s 0.75s;
+      /* transition: opacity 0.75s 0.75s; */
     }
 
     path.interaction {
@@ -161,51 +199,23 @@
       pointer-events: stroke;
     }
 
-    text {
-      transition: opacity 0s 1.5s;
-      text-anchor: middle;
-      font-size: 16px;
+    text.product-label {
       fill: var(--color-chart-label);
-
-      &.label {
-        text-anchor: start;
-        dominant-baseline: text-bottom;
-        &.bottom {
-          dominant-baseline: text-top;
-        }
-      }
-
-      &.year {
-        dominant-baseline: middle;
-        fill: var(--secondary);
-
-        &.first {
-          text-anchor: end;
-        }
-
-        &.last {
-          text-anchor: start;
-        }
-      }
     }
 
-    foreignObject {
-      overflow: visible;
-    }
-
-    div {
-      transition: opacity 0s 1.5s;
+    text.year {
       text-anchor: middle;
-      font-size: 16px;
-      color: var(--color-chart-label);
+      font-size: 10px;
+      fill: var(--secondary);
+    }
 
-      &.label {
-        text-anchor: start;
-        dominant-baseline: text-bottom;
-        &.top {
-          transform: translateY(-100%);
-        }
-      }
+    .first.year {
+      dominant-baseline: middle;
+      text-anchor: end;
+    }
+    .last.year {
+      dominant-baseline: middle;
+      text-anchor: start;
     }
   }
 </style>

@@ -4,31 +4,31 @@
   "products": [
     {
       "code": "3901",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3902",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3903",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3904",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3905",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     }

@@ -4,7 +4,7 @@
   "products": [
     {
       "code": "2922",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
@@ -16,13 +16,13 @@
     },
     {
       "code": "2930",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "2931",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     },
@@ -46,25 +46,25 @@
     },
     {
       "code": "3301",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3501",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3803",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
     {
       "code": "3806",
-      "label": "bottom",
+      "label": "top",
       "years": true,
       "ticks": {}
     },
@@ -76,7 +76,7 @@
     },
     {
       "code": "3912",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     }

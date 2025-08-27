@@ -10,31 +10,31 @@
     },
     {
       "code": "4002",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
     {
       "code": "4004",
-      "label": "top",
+      "label": "left",
       "years": true,
       "ticks": {}
     },
     {
       "code": "4008",
-      "label": "bottom",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
     {
       "code": "4014",
-      "label": "top",
+      "label": "right",
       "years": true,
       "ticks": {}
     },
     {
       "code": "4016",
-      "label": "bottom",
+      "label": "left",
       "years": true,
       "ticks": {}
     }
