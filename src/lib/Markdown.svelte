@@ -56,34 +56,6 @@
     </div>
   {/if}
 </section>
-<section class="info">
-  <div class="progress-row">
-    <span class="counter">{slideId + 1} / {totalSlides}</span>
-    <div
-      class="progress"
-      role="progressbar"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      aria-valuenow={Math.round(progress)}
-    >
-      <div
-        class="progress__bar"
-        style={`transform: scaleX(${progress / 100});`}
-      ></div>
-    </div>
-  </div>
-
-  {#if show}
-    <div
-      class="markdown-fragment"
-      in:fade={{ duration: 750 }}
-      out:fade={{ duration: 750 }}
-      onoutroend={handleOutroEnd}
-    >
-      {@html currentHtml}
-    </div>
-  {/if}
-</section>
 
 <style>
   .info {
