@@ -98,7 +98,7 @@
     padding: 0.5cqh 1cqh;
     border-left: 1px solid var(--secondary);
     color: var(--primary);
-    font-size: 1.9cqw;
+    font-size: 1.85cqw;
     line-height: 1.2;
     height: calc(100cqh - 1cqh);
     overflow: hidden;
