@@ -2,17 +2,26 @@
 {
   "products": [],
   "label": "bottom",
-  "annotations": {
-    "years": false,
-    "label": false
-  }
+  "annotations": { "years": false, "label": false }
 }
 ---
 
-# Introduction
+# Introducere / Introduction
 
-Romania’s chemical sectors shifted from socialist-era export strength to post-2000 import dependence and fragmented competitiveness.  
+Sectorul chimic al României a trecut de la un actor exportator important în perioada socialistă  
+la o dependență de importuri după 2000.  
 
-*Automotive Chemicals*, *Rubber*, and *Plastics and Packaging* became export pillars, while *Fertilizers*, *Petrochemical Intermediates*, and *Commodity Thermoplastics* lost specialization. *Bio-Organics*, *Pharmaceuticals*, and *Bio-Pharma* remain import-driven, while *Explosives*, *Dyes*, or *Media Chemicals* show selective adaptation or obsolescence.  
+Unele ramuri, precum chimie auto, cauciuc și ambalaje din plastic, au devenit piloni de export.  
+Altele și-au pierdut rolul sau au rămas dependente de importuri.  
 
-The graph maps sectors by *product complexity* and *trade balance*. Each point contains a sub-graph tracing its trajectory across decades, showing whether Romania was mainly exporter or importer and how complexity changed.  
+Graficul arată cum s-au schimbat balanța comercială și rolul sectoarelor de-a lungul decadelor.  
+
+<hr>
+
+Romania’s chemical industry moved from being a major exporter during the socialist era  
+to an import-dependent economy after 2000.  
+
+Some branches, such as automotive chemicals, rubber, and plastics packaging, became export pillars.  
+Others lost their role or stayed dependent on imports.  
+
+The graph shows the shifts in trade balance and the place of sectors across decades.

@@ -30,8 +30,17 @@
   const paddingRight = 50;
   const paddingLeft = 50;
 
-  const smallMultipleWidth = 150;
-  const smallMultipleHeight = 300;
+  const MAX_W = 350;
+  const RATIO = 600 / 350;
+  const MIN_W = 120;
+  const COLS = 8;
+
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+  let smallMultipleWidth = $derived(
+    clamp(Math.floor(chartWidth / (COLS + 1)), MIN_W, MAX_W)
+  );
+  let smallMultipleHeight = $derived(Math.floor(smallMultipleWidth * RATIO));
 
   let mostRecent = $derived(data.years.length - 1);
 
@@ -173,7 +182,6 @@
     );
     if (!active.length) return [0, 0, axisWidth, axisHeight];
 
-    // keep labels
     const label_pad = 4;
     const label_size = 10;
     const sideOffset = label_pad * 5 + label_size * 0.4;
@@ -228,18 +236,15 @@
     const extW = Math.max(1, maxX - minX);
     const extH = Math.max(1, maxY - minY);
 
-    // compute scale to fit extent into available inner chart area, leave a small margin
     const margin = 1;
     let k = Math.min(axisWidth / extW, axisHeight / extH) * margin;
 
-    // clamp to zoomBehavior scaleExtent
     const [minK, maxK] = zoomBehavior.scaleExtent();
     k = Math.max(minK, Math.min(maxK, k));
-    // extent is positioned inside the axes group which is translated by paddingLeft/paddingTop
+
     const targetCenterX = paddingLeft + minX + extW / 2;
     const targetCenterY = paddingTop + minY + extH / 2;
 
-    // compute translation so the target center is centered in the SVG viewport
     let tx = chartWidth / 2 - k * targetCenterX;
     let ty = chartHeight / 2 - k * targetCenterY;
 
@@ -256,7 +261,6 @@
 
     const t = zoomIdentity.translate(tx, ty).scale(k);
 
-    // apply a transition
     selection
       .transition()
       .duration(1000)
@@ -268,8 +272,6 @@
       .call(zoomBehavior.transform, t);
   });
 
-  $effect(() => console.log(products));
-
   const getAxisPosition = (axis, fraction) => {
     const k = transform?.k ?? 1;
     const tx = transform?.x ?? 0;
@@ -277,9 +279,8 @@
 
     switch (axis) {
       case "x": {
-        // content (data) coordinate along x (include left padding)
         const contentX = paddingLeft + axisWidth * fraction;
-        // screen coordinate after zoom/pan: k * content + tx
+
         return k * contentX + tx - paddingLeft;
       }
       case "y": {
@@ -378,6 +379,7 @@
     <g class="axes" transform="translate({paddingLeft}, {paddingTop})">
       <g class="labels">
         {#each [0, 1] as index}
+          <!-- X labels: alternate EN (index 0) / RO (index 1) per row -->
           <g
             transform="translate(0, {(axisHeight + paddingTop) * index -
               paddingTop / 2})"
@@ -386,38 +388,26 @@
               class="label-highlited"
               transform="translate({getAxisPosition('x', 0.5)}, 0)"
             >
-              product complexity
+              {index % 2 === 0
+                ? "product complexity"
+                : "complexitatea produsului"}
             </text>
             <text transform="translate({getAxisPosition('x', 0.125)}, 0)">
-              low
+              {index % 2 === 0 ? "low" : "scăzută"}
             </text>
             <text transform="translate({getAxisPosition('x', 0.875)}, 0)">
-              high
+              {index % 2 === 0 ? "high" : "ridicată"}
             </text>
-            <text transform="translate({getAxisPosition('x', 0.75)}, 0)">
-              →
-            </text>
-            <text transform="translate({getAxisPosition('x', 0.25)}, 0)">
-              ←
-            </text>
-            <text transform="translate({getAxisPosition('x', 0.625)}, 0)">
-              →
-            </text>
-            <text transform="translate({getAxisPosition('x', 0.375)}, 0)">
-              ←
-            </text>
-            <!-- {#if !index}
-              <text
-                transform="translate({getAxisPosition('x', 1) +
-                  paddingLeft / 2}, 0)"
-              >
-                +
-              </text>
-            {:else}
-              <text transform="translate({getAxisPosition('x', 0)}, 0">
-                –
-              </text>
-            {/if} -->
+            <text transform="translate({getAxisPosition('x', 0.75)}, 0)">→</text
+            >
+            <text transform="translate({getAxisPosition('x', 0.25)}, 0)">←</text
+            >
+            <text transform="translate({getAxisPosition('x', 0.625)}, 0)"
+              >→</text
+            >
+            <text transform="translate({getAxisPosition('x', 0.375)}, 0)"
+              >←</text
+            >
           </g>
         {/each}
 
@@ -434,7 +424,7 @@
                 1 / 2
               )}) rotate(-90)"
             >
-              trade balance
+              {index % 2 === 0 ? "trade balance" : "balanța comercială"}
             </text>
             <text
               transform="translate(0, {getAxisPosition(
@@ -442,7 +432,7 @@
                 0.125
               )}) rotate(-90)"
             >
-              largely exported
+              {index % 2 === 0 ? "largely exported" : "în mare parte exportat"}
             </text>
             <text
               transform="translate(0, {getAxisPosition(
@@ -450,81 +440,82 @@
                 0.875
               )}) rotate(-90)"
             >
-              largely imported
+              {index % 2 === 0 ? "largely imported" : "în mare parte importat"}
             </text>
             <text
               transform="translate(0, {getAxisPosition('y', 0.75)}) rotate(-90)"
+              >←</text
             >
-              ←
-            </text>
             <text
               transform="translate(0, {getAxisPosition('y', 0.25)}) rotate(-90)"
+              >→</text
             >
-              →
-            </text>
             <text
               transform="translate(0, {getAxisPosition(
                 'y',
                 0.625
-              )}) rotate(-90)"
+              )}) rotate(-90)">←</text
             >
-              ←
-            </text>
             <text
               transform="translate(0, {getAxisPosition(
                 'y',
                 0.375
-              )}) rotate(-90)"
+              )}) rotate(-90)">→</text
             >
-              →
-            </text>
           </g>
         {/each}
       </g>
     </g>
-  </g>
 
-  {#if hoveredItem}
-    <g class="metadata" transform="translate(20, 20)">
-      <rect
-        width="300"
-        height="140"
-        fill="white"
-        stroke="black"
-        rx="5"
-        opacity="0.9"
-      />
-      <text x="10" y="20" font-family="Arial" font-size="14" font-weight="bold">
-        {hoveredItem["HS92-4 Short Label"]}
-      </text>
-      <text x="10" y="40" font-family="Arial" font-size="12">
-        Section: {hoveredItem["HS92 Section"]}
-      </text>
-      <text x="10" y="60" font-family="Arial" font-size="12">
-        HS92-4: {hoveredItem["HS92-4"]}
-      </text>
-      <text x="10" y="80" font-family="Arial" font-size="12">
-        Trade Balance Diff: {hoveredItem.parameters.tradeBalanceDiff[
-          mostRecent
-        ]?.toLocaleString() || "N/A"}
-      </text>
-      <text x="10" y="100" font-family="Arial" font-size="12">
-        Trade Balance: {hoveredItem.parameters.tradeBalance[
-          mostRecent
-        ]?.toLocaleString() || "N/A"}
-      </text>
-      <text x="10" y="120" font-family="Arial" font-size="12">
-        {xParam}: {hoveredItem.parameters[xParam][
-          mostRecent
-        ]?.toLocaleString() || "N/A"}
-      </text>
-    </g>
-  {/if}
-</svg>
+    {#if hoveredItem}
+      <g class="metadata" transform="translate(20, 20)">
+        <rect
+          width="300"
+          height="140"
+          fill="white"
+          stroke="black"
+          rx="5"
+          opacity="0.9"
+        />
+        <text
+          x="10"
+          y="20"
+          font-family="Arial"
+          font-size="14"
+          font-weight="bold"
+        >
+          {hoveredItem["HS92-4 Short Label"]}
+        </text>
+        <text x="10" y="40" font-family="Arial" font-size="12">
+          Section: {hoveredItem["HS92 Section"]}
+        </text>
+        <text x="10" y="60" font-family="Arial" font-size="12">
+          HS92-4: {hoveredItem["HS92-4"]}
+        </text>
+        <text x="10" y="80" font-family="Arial" font-size="12">
+          Trade Balance Diff: {hoveredItem.parameters.tradeBalanceDiff[
+            mostRecent
+          ]?.toLocaleString() || "N/A"}
+        </text>
+        <text x="10" y="100" font-family="Arial" font-size="12">
+          Trade Balance: {hoveredItem.parameters.tradeBalance[
+            mostRecent
+          ]?.toLocaleString() || "N/A"}
+        </text>
+        <text x="10" y="120" font-family="Arial" font-size="12">
+          {xParam}: {hoveredItem.parameters[xParam][
+            mostRecent
+          ]?.toLocaleString() || "N/A"}
+        </text>
+      </g>
+    {/if}
+  </g></svg
+>
 
 <style>
   svg {
     cursor: crosshair;
+    font-size: 1cqw;
 
     * {
       vector-effect: non-scaling-stroke;

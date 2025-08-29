@@ -24,10 +24,12 @@
 }
 ---
 
-# Chemicals used in the _Bio-pharma_ sector
+# Bio-farma / Bio-pharma
 
-Bio-pharma evolved from a niche socialist capability to a structurally import-dependent sector. Romania is not competitively integrated in bio-pharma global value chains and primarily functions as a consumption and packaging node.
+Bio-farma a pornit ca o capacitate socialistă de nișă, dar după 2000 a devenit complet dependentă de importuri.  
+Exporturile au rămas reduse și stagnante, în timp ce importurile au crescut rapid. România joacă mai ales rolul de ambalare și consum, nu de producător global.  
 
-Exports of vitamins, glycosides, and alkaloids grew slowly from the 1960s, reaching ~29 million USD by the late 1980s, but never exceeded a minor share of Romania’s exports. Between 2000–2024, bio-pharma exports increased to 145 million USD (2010–2014) and then stagnated, while imports reached nearly 2.5 billion USD annually after 2010.
+<hr>
 
-Despite gradual increases in Norm PCI (from ~52 to ~68), Norm RCA dropped below 1 after 2010, far below the competitiveness threshold of 10. This indicates a complete loss of export specialization in this vertical, despite rising product complexity.
+Bio-pharma started as a niche socialist capacity but after 2000 became fully import-dependent.  
+Exports stayed small and stagnant, while imports grew rapidly. Romania mainly plays the role of packaging and consumption, not global production.

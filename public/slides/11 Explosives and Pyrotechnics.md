@@ -30,10 +30,14 @@
 }
 ---
 
-# Chemicals used in the _Explosives and Pyrotechnics_ sector
+# Explozivi și pirotehnice / Explosives and Pyrotechnics
 
-This vertical exhibits low product complexity but rising export specialization, particularly in the post-2010 decades. Romania has begun to establish a niche role in regulated or industrial-use explosives, though it has not yet reached competitive advantage levels. The RCA trajectory suggests potential for further specialization, contingent on sectoral demand and regulatory positioning.
+După 2010, România a început să dezvolte o nișă în explozivi industriali și pirotehnice reglementate.  
 
-<!-- Explosives and pyrotechnics exports have remained consistently low, fluctuating around 30–50 million USD per five-year period since 2005. Imports are significantly higher, exceeding 260 million USD per period in the 2000s. Norm PCI is relatively low (40–48), suggesting limited product complexity. However, Norm RCA values have increased steadily, reaching 6.4 in the 2020–2024 period. -->
+Exporturile sunt mici, dar au crescut treptat.  Deficitul comercial se reduce, indicând o posibilă consolidare viitoare.  
 
-The product group includes civilian-grade detonators, fireworks, industrial explosives, and pyrotechnic mixtures. Romania’s RCA gains since the early 2000s indicate an improving position in niche industrial segments, potentially linked to construction, defense, and mining. Export share remains modest, but the structural trade deficit is narrowing.
+<hr>
+
+After 2010, Romania started building a niche in industrial explosives and regulated pyrotechnics.
+
+Exports remain small but have gradually increased.  The trade deficit is narrowing, suggesting possible future consolidation.

@@ -42,10 +42,14 @@
 }
 ---
 
-# Chemicals used in the _Agriculture and Fertilizers_ sector
+# Agricultură și îngrășăminte / Agriculture and Fertilizers
 
-Agriculture and Fertilizers shifted from a position of technological and export strength during the socialist period to a structurally import-dependent sector after 2000, without regaining complexity or strategic relevance.
+În perioada socialistă, România era un producător puternic de îngrășăminte. 
 
-Between 1960 and 1989, this vertical experienced continuous growth in export value, reaching a high of over 2.8 billion USD (real) in 1985–1989. During this period, Romania recorded very high RCA values (up to 44.2) and mid-level complexity (PCI ~44), reflecting strong specialization and technological consolidation in fertilizer and agrochemical production under the socialist industrial regime.
+După 1990, exporturile au scăzut drastic, iar după 2000 importurile le-au depășit constant. Astăzi sectorul este dependent de importuri, pierzând specializarea istorică.  
 
-After 1990, exports declined sharply and structurally. From 2000–2004 onward, imports began to surpass exports consistently. Between 2015–2019, export value dropped to 1.2 billion USD, and by 2020–2024, it had halved again. At the same time, imports rose to 2.4 billion USD, cementing a strong trade deficit. RCA fell below 4, confirming the loss of competitiveness and specialization.
+<hr>
+
+During the socialist period, Romania was a strong producer of fertilizers. 
+
+After 1990, exports declined sharply, and after 2000 imports consistently surpassed them.  Today the sector is import-dependent, having lost its historic specialization.

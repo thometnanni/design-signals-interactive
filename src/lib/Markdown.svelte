@@ -4,17 +4,53 @@
 
   let { md, progress, slideId, totalSlides } = $props();
 
-  let newHtml = $derived(md && marked.parse(md));
+  function splitByHrAndWrap(html) {
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html;
 
-  let currentHtml = $state(marked.parse(md)); // what is currently shown
-  let pendingHtml = null; // next html waiting
-  let show = $state(true); // controls visibility for fade
+    let titleEl = null;
+    let node = tmp.firstChild;
+    while (node && node.nodeType === 3 && !node.textContent.trim())
+      node = node.nextSibling;
+    if (node && node.nodeType === 1 && /^H1$/i.test(node.tagName)) {
+      titleEl = node;
+      tmp.removeChild(node);
+    }
 
-  // Detect content change -> start fade out first
+    const hr = tmp.querySelector("hr");
+
+    const ro = document.createElement("div");
+    ro.className = "lang ro";
+    if (hr) {
+      let n = tmp.firstChild;
+      while (n && n !== hr) {
+        const next = n.nextSibling;
+        ro.appendChild(n);
+        n = next;
+      }
+      hr.remove();
+    } else {
+      while (tmp.firstChild) ro.appendChild(tmp.firstChild);
+    }
+
+    const en = document.createElement("div");
+    en.className = "lang en";
+    while (tmp.firstChild) en.appendChild(tmp.firstChild);
+
+    const titleHtml = titleEl ? titleEl.outerHTML : "";
+    return `${titleHtml}${ro.outerHTML}${en.outerHTML}`;
+  }
+
+  let newHtml = $derived(md ? splitByHrAndWrap(marked.parse(md)) : "");
+
+  let currentHtml = $state(newHtml);
+  let pendingHtml = null;
+  let show = $state(true);
 
   $effect(() => {
-    if (newHtml && newHtml !== currentHtml && newHtml !== pendingHtml) {
-      pendingHtml = newHtml;
+    const parsed = md ? splitByHrAndWrap(marked.parse(md)) : "";
+    if (parsed && parsed !== currentHtml && parsed !== pendingHtml) {
+      pendingHtml = parsed;
       if (show) show = false;
     }
   });
@@ -24,7 +60,7 @@
       currentHtml = pendingHtml;
       pendingHtml = null;
     }
-    show = true; // triggers in:fade after old fully gone
+    show = true;
   }
 </script>
 
@@ -59,17 +95,14 @@
 
 <style>
   .info {
-    padding: 0.5vw 1vw;
+    padding: 0.5cqh 1cqh;
     border-left: 1px solid var(--secondary);
     color: var(--primary);
-    font-size: 2vw;
+    font-size: 1.9cqw;
     line-height: 1.2;
-    height: calc(100vh - 1vw);
+    height: calc(100cqh - 1cqh);
     overflow: hidden;
     background: var(--background);
-    /* display: flex;
-    align-content: flex-end;
-    flex-direction: column-reverse; */
 
     :global(p) {
       margin: 0 0 1ch 0;
@@ -77,22 +110,12 @@
     }
 
     :global(h1) {
-      font-size: 1.1vw;
+      font-size: 1.1cqw;
       line-height: 1;
       color: var(--primary);
       margin: 0 0 2ch 0;
       font-weight: 400;
-      margin-left: calc(3vw + 10px);
-    }
-    /* 
-    :global(strong) {
-      font-style: normal;
-      color: var(--secondary);
-    } */
-
-    :global(em) {
-      font-style: normal;
-      color: var(--secondary);
+      margin-left: calc(3cqw + 10px);
     }
 
     .progress-row {
@@ -103,9 +126,9 @@
     }
 
     .counter {
-      font-size: .8vw;
+      font-size: 0.8cqw;
       color: var(--secondary);
-      width: 3vw;
+      width: 3cqw;
     }
 
     .progress {
@@ -113,14 +136,46 @@
       height: 5px;
       background: color-mix(in srgb, var(--secondary) 20%, transparent);
       overflow: hidden;
+    }
+    .progress .progress__bar {
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 120ms linear;
+      background: var(--secondary);
+    }
 
-      .progress__bar {
-        height: 100%;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 120ms linear;
-        background: var(--secondary);
-      }
+    :global(.lang) {
+      height: 43cqh;
+    }
+
+    :global(.lang:first-of-type) {
+      border-bottom: 1px solid var(--secondary);
+      margin-bottom: 1em;
+    }
+
+    :global(.markdown-fragment .lang.ro *:first-child)::before,
+    :global(.markdown-fragment .lang.en *:first-child)::before {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 1.2em;
+      height: 1.2em;
+      margin-right: 0.2em;
+
+      font-size: 0.8em;
+      padding: 0 0.2ch;
+      background: var(--secondary);
+      color: var(--background);
+    }
+
+    :global(.markdown-fragment .lang.ro *:first-child)::before {
+      content: "RO";
+    }
+
+    :global(.markdown-fragment .lang.en *:first-child)::before {
+      content: "EN";
     }
   }
 </style>

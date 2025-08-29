@@ -36,10 +36,14 @@
 }
 ---
 
-# Chemicals used in the _Commodity Thermoplastics_ sector
+# Termoplastice de bază / Commodity Thermoplastics
 
-Commodity Thermoplastics was once a strategic vertical with export advantage during socialist industrialization. Since 2000, it has lost competitiveness and been absorbed into global supply chains as a processing or distribution hub, with decreasing specialization.
+Acest sector a fost strategic în perioada socialistă, dar după 2000 și-a pierdut forța.
 
-Exports of base thermoplastics (polyethylene, polypropylene, vinyls) increased from ~57 million USD (1965–1969) to over 1.7 billion USD (2010–2014). After that, exports declined sharply to ~745 million USD in 2020–2024, while imports grew to over 3.3 billion USD in the same period.
+Exporturile au scăzut, importurile au crescut, iar România a devenit mai mult un nod de distribuție decât un producător.  Produsele sunt standardizate, fără avantaj clar.  
 
-Norm PCI dropped from ~74 to 62, confirming that this vertical comprises standard global commodities. Norm RCA fell from above 10 (1965–1990s), a period of export competitiveness, to values well below 10 after 2000, reaching only 3.1 by 2020–2024.
+<hr>
+
+This sector was strategic during the socialist period but lost strength after 2000.
+
+Exports declined, imports increased, and Romania became more a distribution hub than a producer.  Products are standardized, with no clear advantage.

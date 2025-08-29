@@ -48,10 +48,14 @@
 }
 ---
 
-# Chemicals used in the _Plastics and Packaging Materials_ sector
+# Materiale plastice și ambalaje / Plastics and Packaging Materials
 
-The plastics and packaging vertical has evolved from a marginal export contributor in the 1960s (under $1 million) to a mid-level performer with export values surpassing $1.2 billion in 2015–2019, before contracting to $629 million in the most recent period. Throughout this trajectory, normalized product complexity (PCI) has remained consistently above the global median (avg. ~63), while Romania’s normalized RCA breached the competitiveness threshold (10) in the 2005–2009 period and has remained above it since.
+De la un sector marginal în anii 1960, acesta a devenit competitiv după 2005.
 
-Romania's exports in this vertical are dominated by low- to mid-value applications, particularly packaging films, rigid containers, lids, and injection-molded components, which are integrated into regional value chains in food processing, consumer goods, and automotive assemblies. The sector’s competitiveness is not driven by innovation capacity but by flexible mass production and logistics adaptability, responding to just-in-time demands from nearby EU clients.
+Exporturile s-au bazat pe filme de ambalaj și containere, integrate în lanțurile regionale.  Totuși, rolul este mai mult de producție flexibilă decât de inovare.  
 
-This vertical exemplifies a functionally embedded platform role in the regional economy: it supports the operational continuity of higher-value sectors in Western Europe by providing adaptable, standardized inputs. The elevated RCA signals sustained demand for Romanian-sourced plastic goods, yet the plateauing PCI suggests limited scope for endogenous upgrading or material innovation.
+<hr>
+
+From a marginal 1960s sector, it became competitive after 2005.
+
+Exports relied on packaging films and containers, tied to regional chains.  Its role is more about flexible production than innovation.

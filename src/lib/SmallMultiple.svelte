@@ -22,7 +22,7 @@
   let showProductLabel = $derived(config?.annotations?.label ?? true);
 
   const label_pad = 4;
-  const label_size = 10;
+  const label_size = 13;
 
   let yScale = $derived.by(() => {
     switch (scaleType) {
@@ -136,7 +136,7 @@
       <text
         text-anchor={labelPlacement.anchor}
         dominant-baseline={labelPlacement.baseline}
-        font-size={label_size / zoom * 1.1}
+        font-size={(label_size / zoom) * 1.4}
         transform="translate({labelPlacement.x}, {labelPlacement.y})"
         class="product-label">{product}</text
       >
@@ -171,17 +171,13 @@
 
     &.faded {
       path {
-        /* display: none; */
         opacity: 0.2;
         stroke: rgb(182, 182, 182);
-        /* transition: opacity 0.75s; */
       }
 
       text,
       div {
         opacity: 0;
-
-        /* transition: opacity 0s; */
       }
     }
 
@@ -189,7 +185,6 @@
       fill: none;
       stroke-width: 1.5;
       stroke: var(--color-line-chart);
-      /* transition: opacity 0.75s 0.75s; */
     }
 
     path.interaction {

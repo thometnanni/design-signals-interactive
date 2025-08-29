@@ -30,10 +30,14 @@
 }
 ---
 
-# Chemicals used in the _Pharmaceuticals_ sector
+# Farmaceutice / Pharmaceuticals
 
-Romania is not competitively specialized in pharmaceuticals. Despite rising complexity and temporary export surges, the sector operates under FDI-led or foreign-controlled production without a strong RCA base. Structural dependence is confirmed by persistent import surpluses and weak RCA.
+România produce medicamente generice și face ambalare, dar importurile domină clar piața. 
 
-Nonetheless, Romania developed a significant pharmaceutical manufacturing sector in the post-socialist period, including packaging, generics, and contract production. However, the RCA values and trade balance show the country remains a dependent consumer in global pharma chains. High PCI reflects the complexity of goods traded but not domestic innovation or specialization.
+Exporturile au avut vârfuri, însă sectorul rămâne dependent de producția externă. Complexitatea produselor este ridicată, dar inovația locală este limitată.  
 
-Pharmaceutical exports grew exponentially, from ~0.7 million USD in 1960–64 to a peak of 5.2 billion USD in 2010–14, before contracting to ~1.9 billion USD in 2020–24. Imports outpaced exports by a wide margin, especially after 2000, reaching 13.5 billion USD in the 2010s. PCI values rose from ~57 to 71.8, reflecting consistent product sophistication. Norm RCA remained well below 10, never exceeding ~3.8.
+<hr>
+
+Romania manufactures generics and handles packaging, but imports strongly dominate the market.
+
+Exports have seen peaks, yet the sector stays dependent on foreign production. Products are complex, but domestic innovation remains limited.
