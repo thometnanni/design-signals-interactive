@@ -6,7 +6,7 @@
   import Markdown from "./lib/Markdown.svelte";
   import Record from "./lib/Record.svelte";
 
-  const slideDuration = 10;
+  const slideDuration = 4;
 
   let xParam = $state("Norm PCI");
   let groupParam = $state(null);

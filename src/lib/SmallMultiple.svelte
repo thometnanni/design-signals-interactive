@@ -17,12 +17,25 @@
     config,
   } = $props();
 
+  const baseWidth = 200;
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const s = $derived(clamp(width / baseWidth, 0.5, 2));
+
   let labelPref = $derived((config?.label ?? "auto").toLowerCase());
   let showYears = $derived(config?.annotations?.years ?? true);
   let showProductLabel = $derived(config?.annotations?.label ?? true);
 
-  const label_pad = 4;
-  const label_size = 13;
+  const labelPad = 4;
+  const labelBaseSize = 15;
+  const yearFontBase = 10;
+  const strokeBase = 2;
+  const selectedStrokeBase = 6;
+
+  const labelPadScaled = $derived(labelPad * s);
+  const labelSize = $derived(labelBaseSize * s);
+  const yearFont = $derived(yearFontBase * s);
+  const strokeWidth = $derived(strokeBase * s);
+  const hitStroke = $derived(selectedStrokeBase * s);
 
   let yScale = $derived.by(() => {
     switch (scaleType) {
@@ -50,8 +63,8 @@
   );
 
   function computeLabel(i, pref, text) {
-    const pad = label_pad / zoom;
-    const font = label_size / zoom;
+    const pad = labelPadScaled / zoom;
+    const font = labelSize / zoom;
 
     const xs = years.map((_, k) => xScale(k));
     const ys = values.map((v) => yScale(v));
@@ -122,12 +135,14 @@
       <text
         transform="translate({-width / 2 - 5 / zoom}, {firstYearY}) scale({1 /
           zoom})"
-        class="first year">’{`${years[0]}`.replace(/^[0-9]{2}/, "")}</text
+        class="first year"
+        font-size={yearFont}>’{`${years[0]}`.replace(/^[0-9]{2}/, "")}</text
       >
       <text
         transform="translate({width / 2 + 5 / zoom}, {lastYearY}) scale({1 /
           zoom})"
         class="last year"
+        font-size={yearFont}
         >’{`${years[years.length - 1]}`.replace(/^[0-9]{2}/, "")}</text
       >
     {/if}
@@ -136,17 +151,18 @@
       <text
         text-anchor={labelPlacement.anchor}
         dominant-baseline={labelPlacement.baseline}
-        font-size={(label_size / zoom) * 1.4}
+        font-size={(labelSize / zoom) * 1.4}
         transform="translate({labelPlacement.x}, {labelPlacement.y})"
         class="product-label">{product}</text
       >
     {/if}
   </g>
 
-  <path class="visual" d={path}></path>
+  <path class="visual" d={path} stroke-width={strokeWidth}></path>
   <path
     class="interaction"
     d={path}
+    stroke-width={hitStroke}
     role="img"
     tabindex="-1"
     aria-label="{item['HS92-4 Short Label']} trade balance trend in {item[
@@ -174,7 +190,6 @@
         opacity: 0.2;
         stroke: rgb(182, 182, 182);
       }
-
       text,
       div {
         opacity: 0;
@@ -183,7 +198,7 @@
 
     path {
       fill: none;
-      stroke-width: 1.5;
+      /* stroke-width: 1.5; */
       stroke: var(--color-line-chart);
     }
 
@@ -200,7 +215,7 @@
 
     text.year {
       text-anchor: middle;
-      font-size: 10px;
+      /* font-size: 10px; */
       fill: var(--secondary);
     }
 
