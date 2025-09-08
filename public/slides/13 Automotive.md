@@ -44,12 +44,13 @@
 
 # Automotive
 
-Chimia pentru automotive este un pilon central al industriei românești.
+Produsele chimice pentru auto, inclusiv lichide, cauciucuri speciale și vopsele, au devenit piloni de export.
 
-Între 2000 și 2019, exporturile au crescut masiv, susținute de investiții străine.  Deși au scăzut după 2020, sectorul rămâne competitiv și integrat în lanțuri globale.  
+Industria auto din România a tras după sine furnizorii chimici, conectându-i la lanțuri europene. Este un sector competitiv și orientat spre export.
+
 
 <hr>
 
-Automotive chemicals are a central pillar of Romania’s industry.
+Automotive chemicals – fluids, special rubbers, paints – became export pillars. 
 
-Between 2000 and 2019, exports grew massively, driven by foreign investment.  Although they fell after 2020, the sector remains competitive and globally integrated.
+The auto industry pulled suppliers into European chains. A competitive, export-oriented branch.

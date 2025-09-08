@@ -38,12 +38,13 @@
 
 # Termoplastice de bază / Commodity Thermoplastics
 
-Acest sector a fost strategic în perioada socialistă, dar după 2000 și-a pierdut forța.
+România producea polietilenă, polipropilenă și alte mase plastice. 
 
-Exporturile au scăzut, importurile au crescut, iar România a devenit mai mult un nod de distribuție decât un producător.  Produsele sunt standardizate, fără avantaj clar.  
+După 2000 producția s-a redus, importurile preluând piața. Doar câteva instalații mai funcționează, sectorul fiind vulnerabil și dependent de importuri.
 
 <hr>
 
-This sector was strategic during the socialist period but lost strength after 2000.
+Romania once produced polyethylene, polypropylene, and other plastics. 
 
-Exports declined, imports increased, and Romania became more a distribution hub than a producer.  Products are standardized, with no clear advantage.
+After 2000 production shrank, imports took over. Only a few units remain, making the sector vulnerable and import-dependent.
+

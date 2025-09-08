@@ -1,27 +1,18 @@
 ---
 {
   "products": [],
-  "label": "bottom",
   "annotations": { "years": false, "label": false }
 }
 ---
 
 # Introducere / Introduction
 
-Sectorul chimic al României a trecut de la un actor exportator important în perioada socialistă  
-la o dependență de importuri după 2000.  
+Industria chimică a României a trecut de la exporturi de volum mare cu complexitate redusă în socialism la dependență de importuri după 2000. 
 
-Unele ramuri, precum chimie auto, cauciuc și ambalaje din plastic, au devenit piloni de export.  
-Altele și-au pierdut rolul sau au rămas dependente de importuri.  
-
-Graficul arată cum s-au schimbat balanța comercială și rolul sectoarelor de-a lungul decadelor.  
+Unele ramuri, precum chimia auto, cauciucul și ambalajele din plastic, au devenit piloni ai exportului. Alte sectoare și-au pierdut avantajul sau au rămas dependente. Graficul arată legătura dintre complexitatea produselor și balanța comercială (exporturi–importuri).
 
 <hr>
 
-Romania’s chemical industry moved from being a major exporter during the socialist era  
-to an import-dependent economy after 2000.  
+Romania’s chemical industry shifted from high-volume, low-complexity exports in the socialist era to import dependence after 2000. 
 
-Some branches, such as automotive chemicals, rubber, and plastics packaging, became export pillars.  
-Others lost their role or stayed dependent on imports.  
-
-The graph shows the shifts in trade balance and the place of sectors across decades.
+Branches such as automotive chemicals, rubber, and plastic packaging became export pillars. Other sectors lost their edge or stayed import-driven. The chart shows the link between product complexity and trade balance (exports–imports).

@@ -37,6 +37,7 @@
       d.text().then((text) => {
         const [, json, md] = text.split("---\n").map((t) => t?.trim());
         const config = JSON.parse(json || '{"products":[]}');
+        console.log(config)
         const filter = {
           key: config.products.length > 0 ? "HS92-4" : null,
           values: config.products.map(({ code }) => code),

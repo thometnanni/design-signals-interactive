@@ -32,12 +32,12 @@
 
 # Farmaceutice / Pharmaceuticals
 
-România produce medicamente generice și face ambalare, dar importurile domină clar piața. 
+Sectorul farmaceutic a cunoscut tranziția de la mari fabrici socialiste la companii private axate pe generice.
 
-Exporturile au avut vârfuri, însă sectorul rămâne dependent de producția externă. Complexitatea produselor este ridicată, dar inovația locală este limitată.  
+Exporturile există, dar importurile de medicamente inovative domină piața. România rămâne dependentă de lanțuri globale și de reglementări externe.
 
 <hr>
 
-Romania manufactures generics and handles packaging, but imports strongly dominate the market.
+The pharmaceutical sector shifted from socialist factories to private firms producing generics. 
 
-Exports have seen peaks, yet the sector stays dependent on foreign production. Products are complex, but domestic innovation remains limited.
+Exports exist,but imports of innovative drugs dominate. Romania stays dependent on global chains and external regulations.

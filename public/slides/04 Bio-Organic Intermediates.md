@@ -86,12 +86,13 @@
 
 # Intermediari bio-organici / Bio-Organic Intermediates
 
-Acest sector a crescut în valoare și diversitate, dar România nu mai produce pentru export. 
+România are tradiții în produse bio-organice simple, dar nu a dezvoltat o bază puternică în biotehnologie. 
 
-Din 2000, importurile au explodat, iar rolul țării este mai mult de consumator sau procesator. Complexitatea produselor a crescut, dar ancorarea internă a rămas slabă.  
+Sectorul produce în special pentru consum intern, iar importurile domină pentru produse complexe. Adaptarea la piața globală este limitată, dar există potențial prin bio-resurse locale.
+
 
 <hr>
 
-This sector grew in value and diversity, but Romania no longer exports competitively.  
-
-Since 2000, imports have surged, and the country acts mainly as a consumer or processor. Product sophistication increased, but domestic anchoring remained weak.
+ Romania has traditions in simple bio-organic products but never built a strong biotech base. 
+ 
+ Output mainly serves domestic demand, while complex products are import-dominated. Global competitiveness is limited, yet local bio-resources offer some potential.

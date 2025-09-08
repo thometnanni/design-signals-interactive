@@ -38,12 +38,13 @@
 
 # Cosmetice și îngrijire personală / Cosmetics and Personal Care
 
-Între 2005 și 2019, România a dezvoltat o specializare moderată în cosmetice și produse de curățenie.
+Sectorul cosmetic a crescut după 2000, stimulat de branduri internaționale și de piața internă. 
 
-După 2020, exporturile au scăzut, iar importurile au rămas ridicate.  Sectorul este condus mai mult de consum intern decât de competitivitate externă.  
+Producția locală există, dar importurile premium domină. România are consumatori tineri și dinamici, dar exporturile rămân modeste.
+
 
 <hr>
 
-Between 2005 and 2019, Romania built a moderate specialization in cosmetics and cleaning products.
+Cosmetics grew after 2000, driven by global brands and domestic demand. 
 
-After 2020, exports declined, while imports stayed high.  The sector is driven more by domestic consumption than by external competitiveness.
+Local production exists, yet premium imports dominate. With young dynamic consumers, Romania’s exports remain modest.

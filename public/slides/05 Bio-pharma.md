@@ -26,10 +26,12 @@
 
 # Bio-farma / Bio-pharma
 
-Bio-farma a pornit ca o capacitate socialistă de nișă, dar după 2000 a devenit complet dependentă de importuri.  
-Exporturile au rămas reduse și stagnante, în timp ce importurile au crescut rapid. România joacă mai ales rolul de ambalare și consum, nu de producător global.  
+Industria bio-farmaceutică din România este mică și depinde de importuri pentru substanțe active. 
+
+Unele companii locale ambalează sau formulează produse, dar valoarea adăugată rămâne scăzută. Piața internă crește, însă competitivitatea externă este redusă.
 
 <hr>
 
-Bio-pharma started as a niche socialist capacity but after 2000 became fully import-dependent.  
-Exports stayed small and stagnant, while imports grew rapidly. Romania mainly plays the role of packaging and consumption, not global production.
+Romania’s bio-pharma industry is small and relies on imports for active ingredients. 
+
+Local firms mostly package or formulate, but value added is low. The domestic market grows, yet external competitiveness remains weak.

@@ -38,12 +38,12 @@
 
 # Acoperiri și adezivi / Coatings and Adhesives
 
-România produce adezivi, lacuri și rășini, cu exporturi moderate.
+Vopselele și adezivii au rămas o ramură activă, cu firme private și investiții externe.
 
-Totuși, importurile rămân mari, iar sectorul joacă doar un rol de finisaj și asigurare de volum.  Valoarea adăugată internă este scăzută.  
+Exporturile cresc, în special pentru construcții și auto. România combină tradiții industriale cu adaptări moderne, menținând un profil competitiv regional.
 
 <hr>
 
-Romania makes adhesives, varnishes, and resins, with moderate exports.
+Coatings and adhesives remain active, with private firms and foreign investment.
 
-However, imports stay high, and the sector mostly plays a role of finishing and supply.  Domestic value capture is limited.
+Exports expand, especially for construction and automotive. Romania blends industrial traditions with modern adaptation, keeping a regional competitive profile.

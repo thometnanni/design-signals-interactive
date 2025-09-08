@@ -70,15 +70,13 @@
 
 # Intrări anorganice pentru procesare / Inorganic Processing Inputs
 
-România a exportat mult timp materii prime anorganice pentru metalurgie, sticlă și ceramică.Acestea erau un sprijin important pentru industrie în perioada socialistă și începutul anilor 2000.  
+România s-a bazat pe resurse minerale și chimice anorganice pentru industriile grele. După 1990, extracția și rafinarea au scăzut, iar importurile au crescut. 
 
-După 2010, exporturile au scăzut puternic, iar importurile au crescut.  
-Sectorul a trecut de la pilon industrial la o prezență marginală, cu rol tot mai mic în economie.  
+Produse cu complexitate redusă, precum soda caustică și cimentul, au rămas active, dar cu competitivitate inegală. Astăzi, aceste ramuri funcționează ca sectoare de sprijin, nu ca motoare de export.
+ 
 
 <hr>
 
-Romania long exported inorganic raw materials for metallurgy, glass, and ceramics. These exports supported industry during the socialist era and the early 2000s.  
+Romania relied on mineral resources and inorganic chemicals for heavy industry. After 1990, extraction and refining declined, while imports rose. 
 
-After 2010, exports declined sharply while imports increased.  
-The sector shifted from being a central industrial base to a marginal presence,  
-with a shrinking role in the economy.
+Low-complexity products such as caustic soda and cement remain, but with uneven competitiveness. Today these branches act as support sectors rather than export drivers.

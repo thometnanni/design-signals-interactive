@@ -26,12 +26,13 @@
 
 # Produse media / Media Products
 
-Produsele chimice pentru media, precum filme fotografice, au devenit învechite odată cu digitalizarea.  
+Chimicale pentru film, fotografie sau tipar au avut un rol central înainte de digitalizare. 
 
-România a rămas dependentă de importuri, cu exporturi minime.  Acest sector are astăzi doar o prezență reziduală.  
+Astăzi aceste produse aproape au dispărut, importurile acoperind rarele nevoi. Este un exemplu de învechire tehnologică rapidă.
+ 
 
 <hr>
 
-Media chemicals, such as photographic films, became obsolete with digitalization. 
+Chemicals for film, photography, or printing were central before digitalization. 
 
-Romania stayed import-dependent, with minimal exports.  Today this sector has only a residual presence.
+Today they almost vanished, with imports covering rare needs. It’s a case of rapid technological obsolescence.

@@ -22,7 +22,7 @@
     },
     {
       "code": "2903",
-      "label": "false",
+      "label": false,
       "years": true,
       "ticks": {}
     },
@@ -46,7 +46,7 @@
     },
     {
       "code": "2907",
-      "label": "right",
+      "label": "false",
       "years": true,
       "ticks": {}
     },
@@ -58,7 +58,7 @@
     },
     {
       "code": "2912",
-      "label": "false",
+      "label": false,
       "years": true,
       "ticks": {}
     },
@@ -76,19 +76,19 @@
     },
     {
       "code": "2918",
-      "label": "false",
+      "label": false,
       "years": true,
       "ticks": {}
     },
     {
       "code": "2920",
-      "label": "false",
+      "label": false,
       "years": true,
       "ticks": {}
     },
     {
       "code": "2921",
-      "label": "top",
+      "label": false,
       "years": true,
       "ticks": {}
     },
@@ -104,14 +104,13 @@
 
 # Intermediari petrochimici organici / Organic Petrochemical Intermediates
 
-Până la mijlocul anilor 2000, România producea intermediari petrochimici folosiți în mase plastice și solvenți.După 2005, exporturile au scăzut constant, iar importurile au crescut.  
+Petrochimia a fost o industrie-cheie, cu mari combinate. 
 
-Sectorul a trecut de la un exportator strategic la o dependență de importuri,  
-reflectând pierderea unor capacități industriale istorice.  
+După 2000, multe s-au închis. România a rămas exportator net pentru câteva produse, precum hidrocarburile aciclice și ciclice sau fosfurile, folosite la plastice, cauciucuri, vopsele și aliaje. Deși mai complexe, volumele au scăzut, iar importurile au crescut, semn al unei specializări industriale slăbite.
+
 
 <hr>
 
-Until the mid-2000s, Romania produced petrochemical intermediates for plastics and solvents. After 2005, exports declined steadily while imports grew.  
+Petrochemicals was a key industry, with large industrial complexes. 
 
-The sector shifted from a strategic exporter to an import-dependent branch,  
-showing the erosion of historic industrial capacities.
+After 2000, many closed down. Romania remained a net exporter of several products, such as acyclic and cyclic hydrocarbons or phosphides, used in plastics, rubbers, paints, and alloys. Although more complex, volumes declined and imports increased, a sign of weakened industrial specialization.

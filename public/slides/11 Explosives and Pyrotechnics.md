@@ -32,12 +32,13 @@
 
 # Explozivi și pirotehnice / Explosives and Pyrotechnics
 
-După 2010, România a început să dezvolte o nișă în explozivi industriali și pirotehnice reglementate.  
+România producea explozivi pentru minerit și industrie. 
 
-Exporturile sunt mici, dar au crescut treptat.  Deficitul comercial se reduce, indicând o posibilă consolidare viitoare.  
+După 1990, cererea a scăzut, multe unități închizându-se. Pirotehnicele rămân marginale, mai ales pentru divertisment. Sectorul are mai mult un rol istoric decât comercial.
+ 
 
 <hr>
 
-After 2010, Romania started building a niche in industrial explosives and regulated pyrotechnics.
+Romania produced explosives for mining and industry. 
 
-Exports remain small but have gradually increased.  The trade deficit is narrowing, suggesting possible future consolidation.
+After 1990 demand fell, many plants closed. Pyrotechnics remain marginal, mostly for entertainment. The sector has more of a historic than a commercial role.

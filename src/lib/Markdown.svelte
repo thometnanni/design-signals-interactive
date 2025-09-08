@@ -99,6 +99,7 @@
     border-left: 1px solid var(--secondary);
     color: var(--primary);
     font-size: 1.85cqw;
+    /* font-size: 2cqw; */
     line-height: 1.2;
     height: calc(100cqh - 1cqh);
     overflow: hidden;
@@ -137,6 +138,7 @@
       background: color-mix(in srgb, var(--secondary) 20%, transparent);
       overflow: hidden;
     }
+    
     .progress .progress__bar {
       height: 100%;
       transform: scaleX(0);

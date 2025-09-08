@@ -12,6 +12,7 @@
   --primary: rgb(26, 7, 101);
   --primary: rgb(13, 4, 46);
   --secondary: #b26549;
+  --secondary: #4f4f4f;
 
   --color-line-chart: var(--primary);
   --color-chart-label: var(--primary);

@@ -21,9 +21,21 @@
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
   const s = $derived(clamp(width / baseWidth, 0.5, 2));
 
-  let labelPref = $derived((config?.label ?? "auto").toLowerCase());
-  let showYears = $derived(config?.annotations?.years ?? true);
-  let showProductLabel = $derived(config?.annotations?.label ?? true);
+  // let labelPref = $derived((config?.label ?? "auto").toLowerCase());
+  let rawLabel = $derived(config?.label ?? "auto");
+  let labelPref = $derived(
+    typeof rawLabel === "string" ? rawLabel.toLowerCase() : "auto"
+  );
+
+  let showYears = $derived(Boolean(config?.annotations?.years ?? true));
+
+  let showProductLabel = $derived(
+    Boolean(
+      Array.isArray(config?.products) && config.products.length > 0
+        ? (config?.label ?? true)
+        : false
+    )
+  );
 
   const labelPad = 4;
   const labelBaseSize = 15;
@@ -153,8 +165,10 @@
         dominant-baseline={labelPlacement.baseline}
         font-size={(labelSize / zoom) * 1.4}
         transform="translate({labelPlacement.x}, {labelPlacement.y})"
-        class="product-label">{product}</text
+        class="product-label"
       >
+        {product}
+      </text>
     {/if}
   </g>
 

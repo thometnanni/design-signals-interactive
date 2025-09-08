@@ -44,12 +44,14 @@
 
 # Industria cauciucului / Rubber Industry
 
-Exporturile de cauciuc au crescut masiv după 1990, ajungând la miliarde de dolari. 
+Cauciucul sintetic și produsele din cauciuc au sprijinit industria auto și exporturile. 
 
-Produsele, în special anvelope și piese auto, sunt de complexitate redusă, dar produse în volum mare.  România oferă locuri de muncă și exporturi stabile, dar nu inovație proprie.  
+După 2000, producția s-a stabilizat, integrată în lanțurile europene. România a păstrat aici un avantaj competitiv, cu specializare în anvelope și produse tehnice.
+
 
 <hr>
 
-Rubber exports grew massively after 1990, reaching billions of dollars.
+Synthetic rubber and rubber goods supported auto and exports. 
 
-Products, especially tires and auto parts, are low in complexity but made in high volumes.  Romania provides jobs and stable exports, but little domestic innovation.
+After 2000, output stabilized, tied to European chains. Romania kept a competitive edge, specializing in tires and technical goods.
+

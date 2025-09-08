@@ -50,12 +50,14 @@
 
 # Materiale plastice și ambalaje / Plastics and Packaging Materials
 
-De la un sector marginal în anii 1960, acesta a devenit competitiv după 2005.
+Materialele de ambalaj din plastic au devenit piloni de export, legați de cererea europeană. 
 
-Exporturile s-au bazat pe filme de ambalaj și containere, integrate în lanțurile regionale.  Totuși, rolul este mai mult de producție flexibilă decât de inovare.  
+România produce volume mari și exportă în regiune, chiar dacă materia primă este importată. Este un sector dinamic, dar și controversat prin impactul ecologic.
+
 
 <hr>
 
-From a marginal 1960s sector, it became competitive after 2005.
+Plastic packaging turned into an export pillar, tied to European demand. 
 
-Exports relied on packaging films and containers, tied to regional chains.  Its role is more about flexible production than innovation.
+Romania exports strongly, even if raw materials are imported. A dynamic but environmentally controversial branch.
+

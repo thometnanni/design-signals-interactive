@@ -32,12 +32,13 @@
 
 # Coloranți și pigmenți / Dyes and Pigments
 
-Acest sector are cerere internă puternică, mai ales pentru textile și mase plastice.
+Industria de coloranți a fost importantă, dar după 1990 s-a contractat masiv. 
 
-Totuși, România nu a reușit să transforme această cerere într-o specializare exportatoare. Importurile domină, iar exporturile rămân reduse.  
+Importurile domină, iar producția locală este marginală. Unele nișe pentru pigmenți speciali rezistă, dar rolul României în comerțul global este limitat.
+
 
 <hr>
 
-This sector has strong domestic demand, especially for textiles and plastics.
+The dyes and pigments industry was once significant, but after 1990 it shrank drastically. 
 
-However, Romania did not turn this demand into export specialization.  Imports dominate, and exports remain small.
+Imports dominate, local output is minor. A few niches in special pigments survive, but Romania’s role in global trade is limited.
