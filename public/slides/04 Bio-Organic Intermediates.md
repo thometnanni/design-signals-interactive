@@ -4,7 +4,7 @@
   "products": [
     {
       "code": "2922",
-      "label": "right",
+      "label": false,
       "years": true,
       "ticks": {}
     },

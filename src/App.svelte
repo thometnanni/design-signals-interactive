@@ -89,7 +89,7 @@
     console.log("Recording finished");
   }
 
-  const loops = 1;
+  const loops = 5;
   const durationMs = slideDuration * slides.length * loops * 1000;
 </script>
 
