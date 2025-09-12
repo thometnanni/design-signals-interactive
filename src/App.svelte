@@ -37,7 +37,7 @@
       d.text().then((text) => {
         const [, json, md] = text.split("---\n").map((t) => t?.trim());
         const config = JSON.parse(json || '{"products":[]}');
-        console.log(config)
+        console.log(config);
         const filter = {
           key: config.products.length > 0 ? "HS92-4" : null,
           values: config.products.map(({ code }) => code),
@@ -136,12 +136,34 @@
 <style>
   main {
     display: grid;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    grid-template-columns: 50% 1fr;
+    grid-template-columns: repeat(2, minmax(500px, 1fr));
     grid-template-rows: 1fr;
     margin: 0;
     padding: 0;
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  @media (max-width: 999px) {
+    main {
+      display: block;
+    }
+
+    :global(.markdown) {
+      font-size: 14px !important;
+    }
+
+    :global(svg) {
+      font-size: 13px !important;
+      height: 50vh !important;
+    }
+    :global(.info) {
+      border: none !important;
+      font-size: 18px !important;
+    }
   }
 
   nav {
