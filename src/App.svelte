@@ -94,24 +94,26 @@
 </script>
 
 <nav>
-  <Record
-    targetSelector="#record"
-    width={3840}
-    height={2160}
-    captureWidth={3840}
-    captureHeight={2160}
-    frameRate={30}
-    videoBitsPerSecond={80_000_000}
-    enforceSize
-    hideCursor
-    fitViewport
-    gridTemplateDuringRecord="2160px 1fr"
-    {loops}
-    perLoopDurationMs={durationMs}
-    on:recordstart={onRecordStart}
-    on:loop={onLoop}
-    on:recordstop={onRecordStop}
-  />
+  <!--
+    <Record
+      targetSelector="#record"
+      width={3840}
+      height={2160}
+      captureWidth={3840}
+      captureHeight={2160}
+      frameRate={30}
+      videoBitsPerSecond={80_000_000}
+      enforceSize
+      hideCursor
+      fitViewport
+      gridTemplateDuringRecord="2160px 1fr"
+      {loops}
+      perLoopDurationMs={durationMs}
+      on:recordstart={onRecordStart}
+      on:loop={onLoop}
+      on:recordstop={onRecordStop}
+    />
+  -->
 
   <button onclick={prevSlide} aria-label="previous chapter">prev</button>
   <button onclick={nextSlide} aria-label="next chapter">next</button>
