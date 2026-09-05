@@ -1,5 +1,5 @@
 :root {
-  font-family: "Lunema Sans v.02", "Inter", Arial, sans-serif;
+  font-family: "Lunema Sans v.02", Arial, Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -85,4 +85,3 @@
 ::selection {
   color: var(--secondary);
 }
-
