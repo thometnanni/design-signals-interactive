@@ -93,7 +93,7 @@
 
   .gallery {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1em;
     margin-bottom: 1em;
   }
